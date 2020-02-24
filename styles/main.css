@@ -1,0 +1,19 @@
+/* Ivan is doing an experiment here */
+.review-images{
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr ;
+    border: chartreuse 6px solid;
+}
+
+.review-images-top{
+    grid-row: 1;
+    grid-column: 1/-1;
+    width: 100%;
+}
+
+.review-images-bottom{
+    grid-row: 2;
+    width: 100%;
+}
+/* End of Ivan's experiment */

@@ -6,9 +6,9 @@
  *          the rest of the images has a class="restaurant-image-bottom"
  *       c. change className of the images.
  */ 
-function replaceImageOnTop(){
-  let topImage = document.getElementsByClassName("review-images-top");
-  
+function placeI1OnTop(){
+    document.getElementById("Ima2").className="review-images-bottom";
+    document.getElementById("Ima1").className="review-images-top";
 }
 
 
