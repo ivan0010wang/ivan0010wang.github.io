@@ -9,3 +9,4 @@ Ivan: 1. wrote sudo code for potentially necessary functions;
 Jordan: 1. Built initial structure of HTML
         2. Linked google fonts
         3. Base styles begun
+        4. Icons linked and made available

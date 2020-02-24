@@ -6,6 +6,10 @@
  *          the rest of the images has a class="restaurant-image-bottom"
  *       c. change className of the images.
  */ 
+function replaceImageOnTop(){
+  let topImage = document.getElementsByClassName("review-images-top");
+  
+}
 
 
 /** All the information of the restaurants should come from the CMS
@@ -52,3 +56,4 @@
                 return a.age-b.age
             })
  */
+
