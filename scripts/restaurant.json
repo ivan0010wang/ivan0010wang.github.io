@@ -1,0 +1,53 @@
+{
+    "name": "restaurant#1",
+    "averageScore": 5,
+    "id": "001",
+    "hasPatio": true,
+    "hasIndoor": true,
+    "foodType": "French food"
+}
+
+{
+    "name": "restaurant#2",
+    "averageScore": 3,
+    "id": "002",
+    "hasPatio": false,
+    "hasIndoor": true,
+    "foodType": "Italian food"
+}
+
+{
+    "name": "restaurant#3",
+    "averageScore": 2,
+    "id": "003",
+    "hasPatio": true,
+    "hasIndoor": false,
+    "foodType": "American food"
+}
+
+{
+    "name": "restaurant#4",
+    "averageScore": 4,
+    "id": "004",
+    "hasPatio": false,
+    "hasIndoor": false,
+    "foodType": "Chinese food"
+}
+
+{
+    "name": "restaurant#5",
+    "averageScore": 2,
+    "id": "005",
+    "hasPatio": false,
+    "hasIndoor": true,
+    "foodType": "French food"
+}
+
+{
+    "name": "restaurant#6",
+    "averageScore": 5,
+    "id": "006",
+    "hasPatio": true,
+    "hasIndoor": true,
+    "foodType": "Japanese food"
+}
