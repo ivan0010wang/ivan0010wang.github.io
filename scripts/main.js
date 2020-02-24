@@ -1,0 +1,1 @@
+// When the images on the bottom is clicked, 
