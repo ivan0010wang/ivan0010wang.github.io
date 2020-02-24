@@ -1,0 +1,13 @@
+
+/* font-family names: 
+'Montserrat' | font-weight: 300, 300i, 400
+'Roboto Slab'
+
+Color Codes: 
+Red #A80000 , Cream #F2E2BF , Brown #BA9374 , White #F7F7F7 , Black #000000 */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: light;
+    color: #A80000;
+}
