@@ -27,7 +27,7 @@ img {
     "current-restaurant"
     "reviews"
     "site-info";
-    grid-template-rows: .15fr 1fr 1fr .35fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .15fr 1fr 1fr .35fr 1fr 1fr 1fr .25fr;
 
     grid-template-columns: 1fr;
 }
@@ -118,6 +118,7 @@ footer {
 
 footer a {
     color: orange;
+}
 
 @media only screen and (min-width: 900px) {
 
