@@ -7,8 +7,12 @@ Restaurant Review Website
       1. wrote sudo code for potentially necessary functions;
       2. researched how to make ranking system with JS, wrote sudo code and examples for reference;
       3. researched where to get weather info, no REALLY FREE api yet...
+### 2020-02-25
+      1. made a test.html in scripts folder for function testing only;
+      2. made a function to show names of all restaurants. It's working but need improvements;
+      3. make a function to screen all restaurants with patios.
 
-## Kevin
+## Kevin:
 ### 2020-02-24 
       1. I created the repo and sent a collaboration to Ivan and Jordan.
       2. I created a few branches through the day.
