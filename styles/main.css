@@ -7,8 +7,9 @@ Red #A80000 , Cream #F2E2BF , Brown #BA9374 , White #F7F7F7 , Black #000000 */
 
 body {
     font-family: 'Montserrat', sans-serif;
-    font-weight: light;
     color: #A80000;
+    background: #F2E2BF;
+    margin: 0;
 }
 
 img {
@@ -17,8 +18,17 @@ img {
 
 .page-container {
     display: grid;
-    grid-template-areas: "nav-bar" "home" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
-    grid-template-rows: 1fr 1fr .25fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "nav-bar"
+    "home"
+    "home-cards"
+    "totals"
+    "all-restaurants"
+    "current-restaurant"
+    "reviews"
+    "site-info";
+    grid-template-rows: .15fr 1fr 1fr .35fr 1fr 1fr 1fr 1fr;
+
     grid-template-columns: 1fr;
 }
 
@@ -32,11 +42,15 @@ img {
     grid-area: home;
     text-align: center;
     position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
 }
 
 .home-cards {
-    display: flex;
-    justify-content: space-around;
+    grid-area: home-cards;
+    line-height: 5em;
+    text-align: center;
 }
 
 .totals {
@@ -51,11 +65,42 @@ img {
 
 .current-restaurant {
     grid-area: current-restaurant;
+}
+
+.attribute-icons {
     display: flex;
+    flex-direction: column;
 }
 
 .reviews {
     grid-area: reviews;
+}
+
+.review-images {
+    display: grid;
+    grid-template-areas: 
+    "store-front store-front store-front"
+    "aerial-table hot-wings dessert-case";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-height: 500px;
+    max-width: 500px;
+}
+
+.store-front {
+    grid-area: store-front;
+}
+
+.aerial-table {
+    grid-area: aerial-table
+}
+
+.hot-wings {
+    grid-area: hot-wings;
+}
+
+.dessert-case {
+    grid-area: dessert-case;
 }
 
 .site-info {
@@ -70,4 +115,67 @@ footer {
 
 footer a {
     color: orange;
+
+@media only screen and (min-width: 900px) {
+
+    .page-container {
+        display: grid;
+        grid-template-areas:
+        "nav-bar"
+        "home"
+        "home-cards"
+        "totals"
+        "all-restaurants"
+        "current-restaurant"
+        "reviews"
+        "site-info";
+        grid-template-rows: .15fr 1fr .5fr .35fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-bar {
+        grid-area: nav-bar;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .home {
+        grid-area: home;
+        text-align: center;
+        position: relative;
+    }
+    
+    .home-cards {
+        grid-area: home-cards;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .totals {
+        grid-area: totals;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .all-restaurants {
+        grid-area: all-restaurants;
+    }
+    
+    .current-restaurant {
+        grid-area: current-restaurant;
+    }
+    
+    .attribute-icons {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .reviews {
+        grid-area: reviews;
+    }
+    
+    .site-info {
+        grid-area: site-info;
+    }
+
 }
