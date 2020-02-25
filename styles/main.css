@@ -8,13 +8,13 @@ Red #A80000 , Cream #F2E2BF , Brown #BA9374 , White #F7F7F7 , Black #000000 */
 
 body {
     font-family: 'Montserrat', sans-serif;
-    color: #A80000;
+    color: #000000;
     background: #F2E2BF;
     margin: 0;
 }
 
 img {
-    display: none;
+    max-width: 100%;
 }
 
 .page-container {
@@ -36,14 +36,13 @@ img {
     grid-area: nav-bar;
     display: flex;
     justify-content: space-between;
+    margin-top: 8%;
 }
 
 .home {
     grid-area: home;
     text-align: center;
     position: relative;
-    max-width: 100%;
-    max-height: 100%;
     object-fit: cover;
 }
 
@@ -65,6 +64,7 @@ img {
 
 .current-restaurant {
     grid-area: current-restaurant;
+    text-align: center;
 }
 
 .attribute-icons {
@@ -79,28 +79,31 @@ img {
 .review-images {
     display: grid;
     grid-template-areas: 
-    "store-front store-front store-front"
-    "aerial-table hot-wings dessert-case";
+    "main-img main-img main-img"
+    "thumb-img1 thumb-img2 thumb-img3";
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    max-height: 500px;
-    max-width: 500px;
+    grid-gap: .25em;
 }
 
-.store-front {
-    grid-area: store-front;
+.main-img {
+    grid-area: main-img;
+    /* display: none; */
 }
 
-.aerial-table {
-    grid-area: aerial-table
+.thumb-img1 {
+    grid-area: thumb-img1;
+    /* display: none; */
 }
 
-.hot-wings {
-    grid-area: hot-wings;
+.thumb-img2 {
+    grid-area: thumb-img2;
+    /* display: none; */
 }
 
-.dessert-case {
-    grid-area: dessert-case;
+.thumb-img3 {
+    grid-area: thumb-img3;
+    /* display: none; */
 }
 
 .site-info {
@@ -163,6 +166,33 @@ img {
     
     .reviews {
         grid-area: reviews;
+        display: flex;
+        max-width: 100%;
+    }
+
+    .review-images {
+        display: grid;
+        grid-template-areas: 
+        "main-img main-img main-img"
+        "thumb-img1 thumb-img2 thumb-img3";
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .main-img {
+        grid-area: main-img;
+    }
+    
+    .thumb-img1 {
+        grid-area: thumb-img1;
+    }
+    
+    .thumb-img2 {
+        grid-area: thumb-img2;
+    }
+    
+    .thumb-img3 {
+        grid-area: thumb-img3;
     }
     
     .site-info {
