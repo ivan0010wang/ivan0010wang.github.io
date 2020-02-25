@@ -42,15 +42,7 @@ button:focus {
 
 .page-container {
     display: grid;
-    grid-template-areas:
-    "nav-bar"
-    "home"
-    "home-cards"
-    "totals"
-    "all-restaurants"
-    "current-restaurant"
-    "reviews"
-    "site-info";
+    grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
     grid-template-rows: .15fr 1fr 1fr .35fr 1fr 1fr 1fr .25fr;
     grid-template-columns: 1fr;
 }
@@ -122,13 +114,11 @@ button:focus {
 
 .reviews {
     grid-area: reviews;
+    display: grid
 }
 
 .review-images {
-    display: grid;
-    grid-template-areas: 
-    "main-img main-img main-img"
-    "thumb-img1 thumb-img2 thumb-img3";
+    grid-template-areas: "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: .25em;
@@ -150,14 +140,18 @@ button:focus {
     grid-area: thumb-img3;
 }
 
-.site-info {
-    grid-area: site-info;
-}
-
 footer {
     background: #000000;
     color: #F7F7F7;
     display: block;
+}
+
+.site-info {
+    grid-area: site-info;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 footer a {
@@ -165,7 +159,6 @@ footer a {
 }
 
 @media only screen and (min-width: 900px) {
-
     .page-container {
         display: grid;
         grid-template-areas:
@@ -180,13 +173,11 @@ footer a {
         grid-template-rows: .15fr 1fr .5fr .35fr .5fr .5fr 1fr .35fr;
         grid-template-columns: 1fr;
     }
-    
     .nav-bar {
         grid-area: nav-bar;
         display: flex;
         justify-content: space-between;
     }
-    
     .home {
         grid-area: home;
         text-align: center;
@@ -203,59 +194,68 @@ footer a {
         display: flex;
         justify-content: space-around;
     }
-    
     .totals {
         grid-area: totals;
         display: flex;
         justify-content: space-around;
     }
-    
     .all-restaurants {
         grid-area: all-restaurants;
     }
-    
     .current-restaurant {
         grid-area: current-restaurant;
     }
-    
     .attribute-icons {
         display: flex;
         flex-direction: column;
     }
-    
     .reviews {
         grid-area: reviews;
-        display: flex;
+        display: grid;
         max-width: 100%;
+        grid-template-areas: "review1 main-img" "review2 main-img" "review3 advert";
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        /* grid-gap: 1em; */
     }
-
+    .review1 {
+        grid-area: review1;
+        border: 3px solid black;
+    }
     .review-images {
         display: grid;
-        grid-template-areas: 
-        "main-img main-img main-img"
-        "thumb-img1 thumb-img2 thumb-img3";
+        grid-template-areas: "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-area: main-img;
+        border: 3px solid blue;
     }
-    
+    .review2 {
+        grid-area: review2;
+        border: 3px solid yellow;
+    }
+    .review3 {
+        grid-area: review3;
+        border: 3px solid teal;
+    }
+    /* .advert2 {
+        grid-area: advert;
+        background-color: black;
+        color: white;
+    } */
     .main-img {
         grid-area: main-img;
     }
-    
     .thumb-img1 {
         grid-area: thumb-img1;
     }
-    
     .thumb-img2 {
         grid-area: thumb-img2;
     }
-    
     .thumb-img3 {
         grid-area: thumb-img3;
     }
-    
     .site-info {
         grid-area: site-info;
     }
-
 }
