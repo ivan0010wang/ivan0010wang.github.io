@@ -4,66 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400|Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="reset.css">
     <title>Project-3</title>
 </head>
 
 <body>
-    <header>
-        <div class="nav-bar">
-            <div class="logo-container">Logo</div>
-            <div class="page-tools">Sign-in/Search</div>
+    <div class="page-container">
+        <header>
+            <div class="nav-bar">
+                <div class="logo-container">Logo</div>
+                <div class="page-tools">Sign-in/Search</div>
+            </div>
+        </header>
+        <section class="home">
+            <img src="./images/close-up-photo-of-a-cheese-burger-1633578.jpg" alt="Juicy Chesseburger">
+            <h1>Site Title</h1>
+            <p>Info</p>
+            <button class="best-rest">Best Restaurant</button>
+            <button class="add-review">Add A Review</button>
+            <div class="home-cards">
+                <div class="top-restaurants">Top Resto's</div>
+                <div class="latest-reviews">New Reviews</div>
+                <div class="weather">Local Weather</div>
+            </div>
+        </section>
+        <div class="totals">
+            <span class="total-restaurants"># of restaurants</span>
+            <span class="total-reviews"># of reviews</span>
         </div>
-    </header>
-    <section class="home">
-        <img src="./images/close-up-photo-of-a-cheese-burger-1633578.jpg" alt="Juicy Chesseburger">
-        <h1>Site Title</h1>
-        <p>Info</p>
-        <button class="best-rest">Best Restaurant</button>
-        <button class="add-review">Add A Review</button>
-        <article class="top-restaurants">Top Resto's</article>
-        <article class="latest-reviews">New Reviews</article>
-        <article class="weather">Local Weather</article>
-    </section>
-    <div class="totals">
-        <span class="total-restaurants"># of restaurants</span>
-        <span class="total-reviews"># of reviews</span>
-    </div>
-    <div class="all-restaurants">
-        <div class="advert1"></div>
-        <ul class="restaurant-list">
-            <li class="restaurant">Restaurant names</li>
-        </ul>
-    </div>
-    <div class="current-restaurant">
-        <h1>Restaurant Name</h1>
-        <p>Restaurant Details</p>
-        <div class="attribute-icons"></div>
-        <div class="restaurant-grade"></div>
-    </div>
-    <div class="reviews">
-        <div class="review1"></div>
-        <div class="review2"></div>
-        <div class="review3"></div>
-        <div class="review-images">
-            <img src="./images/frontofrestaurant.jpg" alt="Photo by Anggun Tan on Unsplash">
-            <img src="./images/3plates.jpg" alt="Photo by STIL on Unsplash">
-            <img src="./images/hot-spicy-wings-1324961.jpg" alt="Hot spicy wings">
-            <img src="./images/restaurant-menu-items-5-1524967.jpg" alt="Restaurant Menu Items">
+        <div class="all-restaurants">
+            <div class="advert1"></div>
+            <ul class="restaurant-list">
+                <li class="restaurant">Restaurant names</li>
+            </ul>
         </div>
-        <div class="advert2"></div>
+        <div class="current-restaurant">
+            <div class="restaurant-attributes">
+                <h1>Restaurant Name</h1>
+                <p>Restaurant Details</p>
+            </div>
+            <div class="attribute-icons">
+                <i class="fa fa-dollar"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-leaf"></i>
+                <i class="fa fa-child"></i>
+                <i class="fa fa-wheelchair"></i>
+            </div>
+            <div class="restaurant-grade"></div>
+        </div>
+        <div class="reviews">
+            <div class="review1"></div>
+            <div class="review2"></div>
+            <div class="review3"></div>
+            <div class="review-images">
+                <img src="./images/steak-meat-raw-herbs-65175.jpg" alt="
+                Photo by mali maeder from Pexels
+                ">
+                <img src="./images/3plates.jpg" alt="Photo by STIL on Unsplash">
+                <img src="./images/hot-spicy-wings-1324961.jpg" alt="Hot spicy wings">
+                <img src="./images/restaurant-menu-items-5-1524967.jpg" alt="Restaurant Menu Items">
+            </div>
+            <div class="advert2"></div>
+        </div>
+        <footer class="site-info">
+            <div>
+                <div class="site-features"></div>
+                <div class="project-about"></div>
+            </div>
+            <div class="credits">
+                <span class="copyright">
+                    <p>&#169; Copyright WD 2020 Q1</p>
+                    <p>All rights reserved</p>
+                </span>
+                <span class="dev-names">
+                    <a href="https://github.com/gadgetcrawford">Kevin</a> 
+                     <a href="https://github.com/IvanTheWonderful">Ivan</a> 
+                   <a href="https://github.com/JordanHofer92">Jordan</a>
+                </span>
+            </div>
+        </footer>
     </div>
-    <footer>
-        <div class="site-info">
-            <div class="site-features"></div>
-            <div class="project-about"></div>
-        </div>
-        <div class="credits">
-            <span class="copyright"></span>
-            <span class="dev-names"></span>
-        </div>
-    </footer>
     <script src="./scripts/main.js"></script>
 </body>
 
