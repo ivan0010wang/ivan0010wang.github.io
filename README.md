@@ -10,7 +10,7 @@ Restaurant Review Website
 ### 2020-02-25
       1. made a test.html in scripts folder for function testing only;
       2. made a function to show names of all restaurants. It's working but need improvements;
-      3. make a function to screen all restaurants with patios.
+      3. made a function to screen all restaurants with patios.
 
 ## Kevin:
 ### 2020-02-24 
