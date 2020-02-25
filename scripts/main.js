@@ -17,6 +17,27 @@ function replaceImageOnTop(){
  * NEED: a. fetch request
  *       b. display the names in the list
  */
+function makeAListofRestaurants() {
+  fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants", {
+    "method": "GET",
+    "headers": {}
+  })
+  .then(response => {
+    return response.json();
+  })
+  .then(myJson => {
+    for (var i = 0; i < myJson.length; i++){
+      var newTag = document.createElement("span");
+      var textnode = document.createTextNode(myJson[i].name + ' ')
+      newTag.appendChild(textnode);
+      var list = document.getElementById("info");
+      list.insertBefore(newTag, list.childNodes[0]);
+    }
+  })
+  .catch(err => {
+    console.log(err);
+  });
+}
 
 
 /** A function to display restaurants
@@ -61,69 +82,3 @@ for (let i = 0; i < restaurant.length; i++){
                 return a.age-b.age
             })
  */
-
-
-// random data
-var restaurant=[
-    {
-      "name": "restaurant#1",
-      "averageScore": 5,
-      "id": "001",
-      "expense":5,
-      "hasPatio": true,
-      "hasIndoor": true,
-      "foodType": "French food"
-    },
-
-    {
-      "name": "restaurant#2",
-      "averageScore": 4,
-      "id": "002",
-      "expense":4,
-      "hasPatio": true,
-      "hasIndoor": true,
-      "foodType": "Japanese food"
-    },
-
-    {
-      "name": "restaurant#3",
-      "averageScore": 2,
-      "id": "003",
-      "expense":3,
-      "hasPatio": true,
-      "hasIndoor": false,
-      "foodType": "American food"
-    },
-
-    {
-      "name": "restaurant#4",
-      "averageScore": 4,
-      "id": "004",
-      "expense":2,
-      "hasPatio": false,
-      "hasIndoor": false,
-      "foodType": "Chinese food"
-    },
-
-    {
-      "name": "restaurant#5",
-      "averageScore": 2,
-      "id": "005",
-      "expense":4,
-      "hasPatio": false,
-      "hasIndoor": true,
-      "foodType": "French food"
-    },
-
-    {
-      "name": "restaurant#6",
-      "averageScore": 5,
-      "id": "006",
-      "expense":5,
-      "hasPatio": true,
-      "hasIndoor": true,
-      "foodType": "Japanese food"
-    }
-  ]
-
-
