@@ -19,12 +19,17 @@ function replaceImageOnTop(){
  */
 
 
-/** There should be a function to display restaurants
+/** A function to display restaurants
  * with indoor/patio seatings based on the weather.
  * 
  * NEED: a. find the restaurants with patio/indoor==true
- *       b. change display to none for those !=true
+ *       b. innerHTML these restaurants
  */
+for (let i = 0; i < restaurant.length; i++){
+  if (restaurant[i].hasPatio === true){
+    console.log(restaurant[i])
+  }
+}
 
 
 /** When a restaurant is clicked, the restaurant info
@@ -56,4 +61,69 @@ function replaceImageOnTop(){
                 return a.age-b.age
             })
  */
+
+
+// random data
+var restaurant=[
+    {
+      "name": "restaurant#1",
+      "averageScore": 5,
+      "id": "001",
+      "expense":5,
+      "hasPatio": true,
+      "hasIndoor": true,
+      "foodType": "French food"
+    },
+
+    {
+      "name": "restaurant#2",
+      "averageScore": 4,
+      "id": "002",
+      "expense":4,
+      "hasPatio": true,
+      "hasIndoor": true,
+      "foodType": "Japanese food"
+    },
+
+    {
+      "name": "restaurant#3",
+      "averageScore": 2,
+      "id": "003",
+      "expense":3,
+      "hasPatio": true,
+      "hasIndoor": false,
+      "foodType": "American food"
+    },
+
+    {
+      "name": "restaurant#4",
+      "averageScore": 4,
+      "id": "004",
+      "expense":2,
+      "hasPatio": false,
+      "hasIndoor": false,
+      "foodType": "Chinese food"
+    },
+
+    {
+      "name": "restaurant#5",
+      "averageScore": 2,
+      "id": "005",
+      "expense":4,
+      "hasPatio": false,
+      "hasIndoor": true,
+      "foodType": "French food"
+    },
+
+    {
+      "name": "restaurant#6",
+      "averageScore": 5,
+      "id": "006",
+      "expense":5,
+      "hasPatio": true,
+      "hasIndoor": true,
+      "foodType": "Japanese food"
+    }
+  ]
+
 
