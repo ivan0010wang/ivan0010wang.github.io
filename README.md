@@ -20,6 +20,14 @@ Restaurant Review Website
       4. Researched how to add comments and score, which we most likely do with patch.
       5. Researched how to add total number of reviews and restaurants. This will be dependent on the content of the API, when we receive it.
 
+      ## Kevin:
+ ### 2020-02-25
+      1. UPdated more images
+      2. Studied Scrapi
+      3. Did footer structure and style
+      4. Did grid on page 2
+
+
 ## Jordan:
 ### 2020-02-24 
       1. Built initial structure of HTML
@@ -31,5 +39,6 @@ Restaurant Review Website
       2. Fine-tuned layouts for mobile/desktop
       3. Styles applied
       4. Created img grid for reviews section
+
 
 
