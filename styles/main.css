@@ -12,7 +12,8 @@ body {
     margin: 0;
 }
 
-h1 , h2 {
+h1,
+h2 {
     color: #F2E2BF;
     font-family: 'Roboto Slab';
 }
@@ -46,15 +47,7 @@ input:focus {
 
 .page-container {
     display: grid;
-    grid-template-areas:
-    "nav-bar"
-    "home"
-    "home-cards"
-    "totals"
-    "all-restaurants"
-    "current-restaurant"
-    "reviews"
-    "site-info";
+    grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
     grid-template-rows: .15fr 1fr 1fr .35fr 1fr 1fr 1fr .25fr;
     grid-template-columns: 1fr;
 }
@@ -114,8 +107,10 @@ input:focus {
 }
 
 .totals span {
+    text-align: center;
     align-self: center;
     color: #F2E2BF;
+    font-size: 2em;
 }
 
 .all-restaurants {
@@ -145,13 +140,12 @@ input:focus {
 
 .reviews {
     grid-area: reviews;
+    display: grid;
+    max-width: 100%;
 }
 
 .review-images {
-    display: grid;
-    grid-template-areas: 
-    "main-img main-img main-img"
-    "thumb-img1 thumb-img2 thumb-img3";
+    grid-template-areas: "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: .25em;
@@ -173,14 +167,19 @@ input:focus {
     grid-area: thumb-img3;
 }
 
-.site-info {
-    grid-area: site-info;
-}
-
 footer {
     background: #000000;
     color: #F7F7F7;
     display: block;
+    text-align: center;
+}
+
+.site-info {
+    grid-area: site-info;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 footer a {
@@ -188,26 +187,20 @@ footer a {
 }
 
 @media only screen and (min-width: 900px) {
-
     .page-container {
         display: grid;
-        grid-template-areas:
-        "nav-bar"
-        "home"
-        "home-cards"
-        "totals"
-        "all-restaurants"
-        "current-restaurant"
-        "reviews"
-        "site-info";
+        grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
         grid-template-rows: .15fr 1fr .5fr .35fr .5fr .5fr 1fr .35fr;
         grid-template-columns: 1fr;
     }
-    
     .nav-bar {
         grid-area: nav-bar;
         display: flex;
         justify-content: space-between;
+    }
+
+    input {
+        width: 15em;
     }
 
     .search-bar {
@@ -217,21 +210,26 @@ footer a {
     .home {
         grid-area: home;
         text-align: center;
-        position: relative;
         width: 100%;
+    }
+    
+    .hero img {
+        position: relative;
     }
 
     .hero-statement {
-        margin-left: 10em;
-        margin-right: 10em;
+        margin-left: 19em;
+        margin-right: 19em;
+        margin-top: 10em;
     }
-    
+
     .home-cards {
         grid-area: home-cards;
         display: flex;
         justify-content: space-around;
         position: absolute;
         margin-top: 125%;
+        margin-left: 2.5%;
         height: 75%;
     }
 
@@ -249,59 +247,74 @@ footer a {
         border: 2px solid white;
         width: 18em;
     }
-    
     .totals {
         grid-area: totals;
         display: flex;
         justify-content: space-around;
     }
-    
     .all-restaurants {
         grid-area: all-restaurants;
     }
-    
     .current-restaurant {
         grid-area: current-restaurant;
     }
-    
     .attribute-icons {
         display: flex;
         flex-direction: column;
     }
-    
     .reviews {
         grid-area: reviews;
-        display: flex;
+        display: grid;
         max-width: 100%;
+        grid-template-areas: "review1 review-images" "review2 review-images" "review3 advert";
+        grid-template-rows: .25fr .25fr .25fr;
+        grid-template-columns: .4fr .65fr;
+        grid-gap: 1em;
     }
-
+    .review1 {
+        grid-area: review1;
+        margin: 2em;
+        border: 1px solid black;
+    }
     .review-images {
         display: grid;
-        grid-template-areas: 
-        "main-img main-img main-img"
-        "thumb-img1 thumb-img2 thumb-img3";
+        grid-template-areas: "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-area: review-images;
+        border: 1px solid blue;
+        margin: 0 4% 12% 5%;
     }
-    
+    .review2 {
+        grid-area: review2;
+        border: 1px solid yellow;
+        margin: 2em;
+    }
+    .review3 {
+        grid-area: review3;
+        margin: 2em;
+        border: 1px solid teal;
+    }
+    .promo2 {
+        grid-area: advert;
+        border: 3px solid pink;
+        width: 30%;
+        height: 90%;
+        margin: 0 10% 5% 20%;
+    }
     .main-img {
         grid-area: main-img;
     }
-    
     .thumb-img1 {
         grid-area: thumb-img1;
     }
-    
     .thumb-img2 {
         grid-area: thumb-img2;
     }
-    
     .thumb-img3 {
         grid-area: thumb-img3;
     }
-    
     .site-info {
         grid-area: site-info;
     }
-
 }
