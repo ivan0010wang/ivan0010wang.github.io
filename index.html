@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400|Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="reset.css">
     <title>Project-3</title>
 </head>
 
@@ -15,21 +16,30 @@
         <header>
             <div class="nav-bar">
                 <div class="logo-container">Logo</div>
-                <div class="page-tools">Sign-in/Search</div>
+                <div class="search-bar">Search</div>
+                <div class="sign-in">User/Password</div>
             </div>
         </header>
-        <section class="home">
-            <img src="./images/close-up-photo-of-a-cheese-burger-1633578.jpg" alt="Juicy Chesseburger">
-            <h1>Site Title</h1>
-            <p>Info</p>
-            <button class="best-rest">Best Restaurant</button>
-            <button class="add-review">Add A Review</button>
-            <div class="home-cards">
-                <div class="top-restaurants">Top Resto's</div>
-                <div class="latest-reviews">New Reviews</div>
-                <div class="weather">Local Weather</div>
+        <div class="home">
+            <img class="hero-img" src="./images/resized and compressed.jpg" alt="Juicy Chesseburger">
+            <div class="hero-statement">
+                <h1>Site Title</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut dicta eveniet, corporis eligendi labore sapiente temporibus nam tempore distinctio aliquam maxime nobis id facilis voluptatem!</p>
+                <button class="best-rest">Best Restaurant</button>
+                <button class="add-review">Add A Review</button>
             </div>
-        </section>
+        </div>
+        <div class="home-cards">
+                <div class="top-restaurants">
+                    <h2>Top Resto's</h2>
+                </div>
+                <div class="latest-reviews">
+                    <h2>New Reviews</h2>
+                </div>
+                <div class="weather">
+                    <h2>Local Weather</h2>
+                </div>
+        </div>
         <div class="totals">
             <span class="total-restaurants"># of restaurants</span>
             <span class="total-reviews"># of reviews</span>
@@ -61,23 +71,34 @@
             <div class="review2"></div>
             <div class="review3"></div>
             <div class="review-images">
-                <img src="./images/frontofrestaurant.jpg" alt="Photo by Anggun Tan on Unsplash">
-                <img src="./images/3plates.jpg" alt="Photo by STIL on Unsplash">
-                <img src="./images/hot-spicy-wings-1324961.jpg" alt="Hot spicy wings">
-                <img src="./images/restaurant-menu-items-5-1524967.jpg" alt="Restaurant Menu Items">
+                <img class="main-img" src="./images/steak-meat-raw-herbs-65175.jpg" alt="
+                Photo by mali maeder from Pexels">
+                <img class="thumb-img1" src="./images/3plates.jpg" alt="Photo by STIL on Unsplash">
+                <img class="thumb-img2" src="./images/hot-spicy-wings-1324961.jpg" alt="Hot spicy wings">
+                <img class="thumb-img3" src="./images/restaurant-menu-items-5-1524967-639x468.jpg" alt="Restaurant Menu Items">
             </div>
-            <div class="advert2"></div>
+            <div class="advert2">
+                <img src="/images/traditinal-dessert-1323879-640x360.jpg" alt="">
+            </div>
         </div>
         <footer class="site-info">
-            <div>
-                <div class="site-features"></div>
+            <div class="site-features">
+                <p>This site includes ability to post reviews, and displays top restaurants</p>
                 <div class="project-about"></div>
             </div>
             <div class="credits">
-                <span class="copyright"></span>
-                <span class="dev-names"></span>
+                <span class="copyright">
+             <p>&#169; Copyright WD 2020 Q1</p>
+             <p>All rights reserved</p>
+            </span>
+                <span class="dev-names">
+             <a href="https://github.com/gadgetcrawford">Kevin</a> 
+             <a href="https://github.com/IvanTheWonderful">Ivan</a> 
+            <a href="https://github.com/JordanHofer92">Jordan</a>
+           </span>
             </div>
         </footer>
+
     </div>
     <script src="./scripts/main.js"></script>
 </body>
