@@ -12,32 +12,24 @@ function replaceImageOnTop(){
 }
 
 
-/** All the information of the restaurants should come from the CMS
+/** The name of the restaurants should come from the CMS
  * 
  * NEED: a. fetch request
  *       b. display the names in the list
  */
-function makeAListofRestaurants() {
-  fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants", {
-    "method": "GET",
-    "headers": {}
-  })
-  .then(response => {
-    return response.json();
-  })
-  .then(myJson => {
-    for (var i = 0; i < myJson.length; i++){
-      var newTag = document.createElement("span");
-      var textnode = document.createTextNode(myJson[i].name + ' ')
-      newTag.appendChild(textnode);
-      var list = document.getElementById("info");
-      list.insertBefore(newTag, list.childNodes[0]);
-    }
-  })
-  .catch(err => {
-    console.log(err);
-  });
+async function makeAListOfRestaurants(){
+  const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
+  const restaurantInfo = await response.json();
+  for (var i = 0; i < restaurantInfo.length; i++){
+    var newTag = document.createElement("span");
+    var textnode = document.createTextNode(restaurantInfo[i].name + ' ')
+    newTag.appendChild(textnode);
+    var list = document.getElementById("restaurantNames");
+    list.insertBefore(newTag, list.childNodes[0]);
+  }
 }
+makeAListOfRestaurants();
+// End
 
 
 /** A function to display restaurants
@@ -46,19 +38,30 @@ function makeAListofRestaurants() {
  * NEED: a. find the restaurants with patio/indoor==true
  *       b. innerHTML these restaurants
  */
-for (let i = 0; i < restaurant.length; i++){
-  if (restaurant[i].hasPatio === true){
-    console.log(restaurant[i])
+async function showRestaurantsWithPatio(){
+  const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
+  const restaurantInfo = await response.json();
+  for (var i = 0; i < restaurantInfo.length; i++){
+    if (restaurantInfo[i].patio === true){
+      var newTag = document.createElement("span");
+      var textnode = document.createTextNode(restaurantInfo[i].name + ' ')
+      newTag.appendChild(textnode);
+      var list = document.getElementById("patio");
+      list.insertBefore(newTag, list.childNodes[0]);
+    }
   }
 }
+showRestaurantsWithPatio();
+// End
 
 
 /** When a restaurant is clicked, the restaurant info
  * should be updated.
  * 
  * NEED: a. onclick event
- *       b. display the perticular element in the JSON
+ *       b. display the perticular element
  */
+
 
 
 /** The user review should be added to the cms.
