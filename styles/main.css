@@ -12,7 +12,8 @@ body {
     margin: 0;
 }
 
-h1 , h2 {
+h1,
+h2 {
     color: #F2E2BF;
     font-family: 'Roboto Slab';
 }
@@ -161,15 +162,7 @@ footer a {
 @media only screen and (min-width: 900px) {
     .page-container {
         display: grid;
-        grid-template-areas:
-        "nav-bar"
-        "home"
-        "home-cards"
-        "totals"
-        "all-restaurants"
-        "current-restaurant"
-        "reviews"
-        "site-info";
+        grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
         grid-template-rows: .15fr 1fr .5fr .35fr .5fr .5fr 1fr .35fr;
         grid-template-columns: 1fr;
     }
@@ -183,12 +176,10 @@ footer a {
         text-align: center;
         position: relative;
     }
-
     .hero-statement {
         margin-left: 10em;
         margin-right: 10em;
     }
-    
     .home-cards {
         grid-area: home-cards;
         display: flex;
@@ -213,36 +204,42 @@ footer a {
         grid-area: reviews;
         display: grid;
         max-width: 100%;
-        grid-template-areas: "review1 main-img" "review2 main-img" "review3 advert";
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        /* grid-gap: 1em; */
+        grid-template-areas: "review1 review-images" "review2 review-images" "review3 advert";
+        grid-template-rows: .25fr .25fr .25fr;
+        grid-template-columns: .4fr .65fr;
+        grid-gap: 1em;
     }
     .review1 {
         grid-area: review1;
-        border: 3px solid black;
+        margin: 2em;
+        border: 1px solid black;
     }
     .review-images {
         display: grid;
         grid-template-areas: "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-area: main-img;
-        border: 3px solid blue;
+        grid-area: review-images;
+        border: 1px solid blue;
+        margin: 0 4% 12% 5%;
     }
     .review2 {
         grid-area: review2;
-        border: 3px solid yellow;
+        border: 1px solid yellow;
+        margin: 2em;
     }
     .review3 {
         grid-area: review3;
-        border: 3px solid teal;
+        margin: 2em;
+        border: 1px solid teal;
     }
-    /* .advert2 {
+    .promo2 {
         grid-area: advert;
-        background-color: black;
-        color: white;
-    } */
+        border: 3px solid pink;
+        width: 30%;
+        height: 90%;
+        margin: 0 10% 5% 20%;
+    }
     .main-img {
         grid-area: main-img;
     }
