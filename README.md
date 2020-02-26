@@ -39,6 +39,11 @@ Restaurant Review Website
       2. Fine-tuned layouts for mobile/desktop
       3. Styles applied
       4. Created img grid for reviews section
+### 2020-02-26
+      1. Completed Mobile layout/styles
+      2. Desktop layout/styles applied, near completion
+      3. Fonts/Colors applied
+      4. Re-classed html elements for clarity
 
 
 

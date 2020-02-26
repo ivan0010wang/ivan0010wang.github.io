@@ -24,7 +24,7 @@ async function makeAListOfRestaurants(){
     var newTag = document.createElement("span");
     var textnode = document.createTextNode(restaurantInfo[i].name + ' ')
     newTag.appendChild(textnode);
-    var list = document.getElementById("restaurantNames");
+    var list = document.getElementById("restaurant");
     list.insertBefore(newTag, list.childNodes[0]);
   }
 }
