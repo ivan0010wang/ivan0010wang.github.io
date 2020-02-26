@@ -1,19 +1,258 @@
-/* Ivan is doing an experiment here */
-.review-images{
+/* font-family names: 
+'Montserrat' | font-weight: 300, 300i, 400
+'Roboto Slab'
+
+Color Codes: 
+Red #A80000 , Cream #F2E2BF , Brown #BA9374 , White #F7F7F7 , Black #000000 */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    background: #BA9374;
+    margin: 0;
+}
+
+h1,
+h2 {
+    color: #F2E2BF;
+    font-family: 'Roboto Slab';
+}
+
+p {
+    color: #F7F7F7;
+    font-family: 'Montserrat';
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    padding: 2em;
+    background-color: #A80000;
+    font-family: 'Roboto Slab';
+    font-size: 13px;
+    font-weight: 400;
+    color: #F2E2BF;
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.page-container {
     display: grid;
-    grid-template-rows: 3fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr ;
-    border: chartreuse 6px solid;
+    grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
+    grid-template-rows: .15fr 1fr 1fr .35fr 1fr 1fr 1fr .25fr;
+    grid-template-columns: 1fr;
 }
 
-.review-images-top{
-    grid-row: 1;
-    grid-column: 1/-1;
-    width: 100%;
+.nav-bar {
+    grid-area: nav-bar;
+    display: flex;
+    justify-content: space-around;
+    padding: 2em;
 }
 
-.review-images-bottom{
-    grid-row: 2;
-    width: 100%;
+.home {
+    grid-area: home;
+    text-align: center;
+    position: relative;
 }
-/* End of Ivan's experiment */
+
+.hero-img {
+    filter: brightness(0.7);
+}
+
+.hero-statement {
+    position: absolute;
+    top: 25%;
+}
+
+.home-cards {
+    grid-area: home-cards;
+    line-height: 5em;
+    text-align: center;
+}
+
+.totals {
+    grid-area: totals;
+    display: flex;
+    justify-content: space-around;
+    background-color: #A80000;
+}
+
+.totals span {
+    align-self: center;
+    color: #F2E2BF;
+}
+
+.all-restaurants {
+    grid-area: all-restaurants;
+}
+
+.all-restaurants li {
+    font-family: 'Montserrat';
+    color: #A80000;
+    font-weight: 300i;
+}
+
+.current-restaurant {
+    grid-area: current-restaurant;
+    text-align: center;
+}
+
+.current-restaurant p {
+    font-weight: 400;
+}
+
+.attribute-icons {
+    display: flex;
+    flex-direction: column;
+    color: #A80000;
+}
+
+.reviews {
+    grid-area: reviews;
+    display: grid
+}
+
+.review-images {
+    grid-template-areas: "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: .25em;
+}
+
+.main-img {
+    grid-area: main-img;
+}
+
+.thumb-img1 {
+    grid-area: thumb-img1;
+}
+
+.thumb-img2 {
+    grid-area: thumb-img2;
+}
+
+.thumb-img3 {
+    grid-area: thumb-img3;
+}
+
+footer {
+    background: #000000;
+    color: #F7F7F7;
+    display: block;
+}
+
+.site-info {
+    grid-area: site-info;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a {
+    color: #BA9374;
+}
+
+@media only screen and (min-width: 900px) {
+    .page-container {
+        display: grid;
+        grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
+        grid-template-rows: .15fr 1fr .5fr .35fr .5fr .5fr 1fr .35fr;
+        grid-template-columns: 1fr;
+    }
+    .nav-bar {
+        grid-area: nav-bar;
+        display: flex;
+        justify-content: space-between;
+    }
+    .home {
+        grid-area: home;
+        text-align: center;
+        position: relative;
+    }
+    .hero-statement {
+        margin-left: 10em;
+        margin-right: 10em;
+    }
+    .home-cards {
+        grid-area: home-cards;
+        display: flex;
+        justify-content: space-around;
+    }
+    .totals {
+        grid-area: totals;
+        display: flex;
+        justify-content: space-around;
+    }
+    .all-restaurants {
+        grid-area: all-restaurants;
+    }
+    .current-restaurant {
+        grid-area: current-restaurant;
+    }
+    .attribute-icons {
+        display: flex;
+        flex-direction: column;
+    }
+    .reviews {
+        grid-area: reviews;
+        display: grid;
+        max-width: 100%;
+        grid-template-areas: "review1 review-images" "review2 review-images" "review3 advert";
+        grid-template-rows: .25fr .25fr .25fr;
+        grid-template-columns: .4fr .65fr;
+        grid-gap: 1em;
+    }
+    .review1 {
+        grid-area: review1;
+        margin: 2em;
+        border: 1px solid black;
+    }
+    .review-images {
+        display: grid;
+        grid-template-areas: "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-area: review-images;
+        border: 1px solid blue;
+        margin: 0 4% 12% 5%;
+    }
+    .review2 {
+        grid-area: review2;
+        border: 1px solid yellow;
+        margin: 2em;
+    }
+    .review3 {
+        grid-area: review3;
+        margin: 2em;
+        border: 1px solid teal;
+    }
+    .promo2 {
+        grid-area: advert;
+        border: 3px solid pink;
+        width: 30%;
+        height: 90%;
+        margin: 0 10% 5% 20%;
+    }
+    .main-img {
+        grid-area: main-img;
+    }
+    .thumb-img1 {
+        grid-area: thumb-img1;
+    }
+    .thumb-img2 {
+        grid-area: thumb-img2;
+    }
+    .thumb-img3 {
+        grid-area: thumb-img3;
+    }
+    .site-info {
+        grid-area: site-info;
+    }
+}

@@ -12,33 +12,125 @@ function placeI1OnTop(){
 }
 
 
-/** All the information of the restaurants should come from the CMS
+
+/** The name of the restaurants should come from the CMS
  * 
  * NEED: a. fetch request
  *       b. display the names in the list
  */
+async function makeAListOfRestaurants(){
+  const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
+  const restaurantInfo = await response.json();
+  for (var i = 0; i < restaurantInfo.length; i++){
+    var newTag = document.createElement("button");
+    var textnode = document.createTextNode(restaurantInfo[i].name + ' ');
+    newTag.setAttribute('onclick', 'showRestaurantDetails(i)');
+    // The line above need to be tested.
+    // If not working, try researching .setAttribute.onclick = function...
+    newTag.appendChild(textnode);
+    var list = document.getElementById("restaurantNames");
+    list.insertBefore(newTag, list.childNodes[0]);
+  }
+}
+makeAListOfRestaurants();
+
+function giveMeFive(){
+  console.log("FIVE!");
+}
+
+function showRestaurantDetails(i){
+  showRestaurantName(i);
+  showRestaurantType(i);
+  showRestaurantDining(i);
+  showRestaurantDescription(i);
+}
+
+function showRestaurantName(i){
+  var newTag = document.createElement("h1");
+  var textnode = document.createTextNode("Name: " + restaurantInfo[i].name);
+  newTag.appendChild(textnode);
+  var list = document.getElementById("info");
+  list.insertAfter(newTag, list.childNodes[0]);
+}
+function showRestaurantType(i){
+  var newTag = document.createElement("span");
+  var textnode = document.createTextNode("Cuisine " + restaurantInfo[i].type);
+  newTag.appendChild(textnode);
+  var list = document.getElementById("info");
+  list.insertAfter(newTag, list.childNodes[1]);
+}
+function showRestaurantDining(i){
+  var newTag = document.createElement("span");
+  var textnode = document.createTextNode("Dining " + restaurantInfo[i].dining);
+  newTag.appendChild(textnode);
+  var list = document.getElementById("info");
+  list.insertAfter(newTag, list.childNodes[2]);
+}
+function showRestaurantDescription(i){
+  var newTag = document.createElement("p");
+  var textnode = document.createTextNode("Description" + restaurantInfo[i].description);
+  newTag.appendChild(textnode);
+  var list = document.getElementById("info");
+  list.insertBefore(newTag, list.childNodes[3]);
+}
+// End
 
 
-/** There should be a function to display restaurants
+
+// async function makeAListOfRestaurants(){
+//     const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
+//     const restaurantInfo = await response.json();
+//     for (var i = 0; i < restaurantInfo.length; i++){
+//       var newTag = document.createElement("button");
+//       var textnode = document.createTextNode(restaurantInfo[i].name + ' ')
+//       // newTag.setAttribute('onclick', giveMeFive());
+//       newTag.appendChild(textnode);
+//       var list = document.getElementById("restaurantNames");
+//       list.insertBefore(newTag, list.childNodes[0]);
+//     }
+//   }
+//   makeAListOfRestaurants();
+
+
+/** A function to display restaurants
  * with indoor/patio seatings based on the weather.
  * 
  * NEED: a. find the restaurants with patio/indoor==true
- *       b. change display to none for those !=true
+ *       b. innerHTML these restaurants
  */
+async function showRestaurantsWithPatio(){
+  const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
+  const restaurantInfo = await response.json();
+  for (var i = 0; i < restaurantInfo.length; i++){
+    if (restaurantInfo[i].patio === true){
+      var newTag = document.createElement("button");
+      var textnode = document.createTextNode(restaurantInfo[i].name + ' ')
+      newTag.appendChild(textnode);
+      var list = document.getElementById("patio");
+      list.insertBefore(newTag, list.childNodes[0]);
+    }
+  }
+}
+showRestaurantsWithPatio();
+// End
+
 
 
 /** When a restaurant is clicked, the restaurant info
  * should be updated.
  * 
  * NEED: a. onclick event
- *       b. display the perticular element in the JSON
+ *       b. display the perticular element
  */
+
+
 
 
 /** The user review should be added to the cms.
  * NEED: a. assign user input to a object variable
  *       b. patch request
  */
+
 
 
 /** A function to rank all restaurants based on average score.
@@ -56,4 +148,3 @@ function placeI1OnTop(){
                 return a.age-b.age
             })
  */
-
