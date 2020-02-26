@@ -6,9 +6,10 @@
  *          the rest of the images has a class="restaurant-image-bottom"
  *       c. change className of the images.
  */ 
-function placeI1OnTop(){
-    document.getElementById("Ima2").className="review-images-bottom";
-    document.getElementById("Ima1").className="review-images-top";
+
+function replaceImageOnTop(){
+  let topImage = document.getElementsByClassName("main-img");
+  
 }
 
 
@@ -28,7 +29,7 @@ async function makeAListOfRestaurants(){
     // The line above need to be tested.
     // If not working, try researching .setAttribute.onclick = function...
     newTag.appendChild(textnode);
-    var list = document.getElementById("restaurantNames");
+    var list = document.getElementById("restaurant");
     list.insertBefore(newTag, list.childNodes[0]);
   }
 }
