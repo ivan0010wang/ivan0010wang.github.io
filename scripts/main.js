@@ -18,26 +18,42 @@ function replaceImageOnTop(){
  *       b. display the names in the list
  */
 function makeAListofRestaurants() {
-  fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants", {
+  return fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants", {
     "method": "GET",
     "headers": {}
   })
   .then(response => {
     return response.json();
   })
-  .then(myJson => {
-    for (var i = 0; i < myJson.length; i++){
-      var newTag = document.createElement("span");
-      var textnode = document.createTextNode(myJson[i].name + ' ')
-      newTag.appendChild(textnode);
-      var list = document.getElementById("info");
-      list.insertBefore(newTag, list.childNodes[0]);
-    }
-  })
-  .catch(err => {
-    console.log(err);
-  });
 }
+var a = makeAListofRestaurants();
+console.log(a.json());
+
+
+
+
+
+// function makeAListofRestaurants() {
+//   fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants", {
+//     "method": "GET",
+//     "headers": {}
+//   })
+//   .then(response => {
+//     return response.json();
+//   })
+//   .then(myJson => {
+//     for (var i = 0; i < myJson.length; i++){
+//       var newTag = document.createElement("span");
+//       var textnode = document.createTextNode(myJson[i].name + ' ')
+//       newTag.appendChild(textnode);
+//       var list = document.getElementById("info");
+//       list.insertBefore(newTag, list.childNodes[0]);
+//     }
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
+// }
 
 
 /** A function to display restaurants
@@ -46,11 +62,11 @@ function makeAListofRestaurants() {
  * NEED: a. find the restaurants with patio/indoor==true
  *       b. innerHTML these restaurants
  */
-for (let i = 0; i < restaurant.length; i++){
-  if (restaurant[i].hasPatio === true){
-    console.log(restaurant[i])
-  }
-}
+// for (let i = 0; i < restaurant.length; i++){
+//   if (restaurant[i].hasPatio === true){
+//     console.log(restaurant[i])
+//   }
+// }
 
 
 /** When a restaurant is clicked, the restaurant info
