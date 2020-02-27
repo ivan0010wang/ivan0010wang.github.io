@@ -7,7 +7,7 @@ Red #A80000 , Cream #F2E2BF , Brown #BA9374 , White #F7F7F7 , Black #000000 */
 
 body {
     font-family: 'Montserrat', sans-serif;
-    color: #000000;
+    color: #A80000;
     background: #BA9374;
     margin: 0;
 }
@@ -27,6 +27,16 @@ img {
     max-width: 100%;
 }
 
+a {
+    text-decoration: none;
+    color: #A80000;
+}
+
+a:hover {
+    color: #F7F7F7;
+    transition: ease-in .2s;
+}
+
 button {
     padding: 2em;
     background-color: #A80000;
@@ -41,6 +51,19 @@ button:focus {
     outline: none;
 }
 
+button:hover {
+    color: #000000;
+    transition: ease-in .2s;
+}
+
+input:focus {
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
 .page-container {
     display: grid;
     grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
@@ -51,8 +74,26 @@ button:focus {
 .nav-bar {
     grid-area: nav-bar;
     display: flex;
-    justify-content: space-around;
-    padding: 2em;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.client-tools {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin-right: 1em;
+}
+
+.client-tools button {
+    padding: 5px;
+    background-color: #A80000;
+    font-size: 13px;
+}
+
+.sign-in {
+    margin-bottom: 2em;
 }
 
 .home {
@@ -61,19 +102,22 @@ button:focus {
     position: relative;
 }
 
-.hero-img {
+.home-img {
     filter: brightness(0.7);
 }
 
-.hero-statement {
+.home-statement {
     position: absolute;
-    top: 25%;
+    top: 20%;
 }
 
 .home-cards {
     grid-area: home-cards;
     line-height: 5em;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .totals {
@@ -84,8 +128,10 @@ button:focus {
 }
 
 .totals span {
+    text-align: center;
     align-self: center;
     color: #F2E2BF;
+    font-size: 2em;
 }
 
 .all-restaurants {
@@ -115,7 +161,8 @@ button:focus {
 
 .reviews {
     grid-area: reviews;
-    display: grid
+    display: grid;
+    max-width: 100%;
 }
 
 .review-images {
@@ -145,6 +192,7 @@ footer {
     background: #000000;
     color: #F7F7F7;
     display: block;
+    text-align: center;
 }
 
 .site-info {
@@ -159,11 +207,17 @@ footer a {
     color: #BA9374;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 930px) {
+
+    
+    button {
+        font-size: 1em;
+    }
+    
     .page-container {
         display: grid;
         grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
-        grid-template-rows: .15fr 1fr .5fr .35fr .5fr .5fr 1fr .35fr;
+        grid-template-rows: .05fr 1fr .5fr .35fr .5fr .5fr 1fr .35fr;
         grid-template-columns: 1fr;
     }
     .nav-bar {
@@ -171,35 +225,90 @@ footer a {
         display: flex;
         justify-content: space-between;
     }
+    
+    .client-tools {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .sign-in {
+        margin-left: 2em;
+        margin-top: 2em;
+    }
+    
+    input {
+        width: 15em;
+    }
+    
     .home {
         grid-area: home;
         text-align: center;
-        position: relative;
+        width: 100%;
     }
-    .hero-statement {
-        margin-left: 10em;
-        margin-right: 10em;
+    
+    .home h1 {
+        font-size: 6em;
     }
+
+    .home p {
+        font-size: 2em;
+    }
+
+    .home-statement {
+        margin-left: 19em;
+        margin-right: 19em;
+        margin-top: 10em;
+    }
+
     .home-cards {
         grid-area: home-cards;
         display: flex;
+        flex-direction: row;
         justify-content: space-around;
     }
+
+    .top-restaurants {
+        border: 5px solid #F2E2BF;
+        width: 18em;
+        position: relative;
+        margin-top: -10%;
+    }
+
+    .latest-reviews {
+        border: 5px solid #F2E2BF;
+        width: 20em;
+        position: relative;
+        margin-top: -10%;
+    }
+
+    .weather {
+        border: 5px solid #F2E2BF;
+        width: 18em;
+        position: relative;
+        margin-top: -10%;
+    }
+
     .totals {
         grid-area: totals;
         display: flex;
         justify-content: space-around;
     }
+
     .all-restaurants {
         grid-area: all-restaurants;
     }
+
     .current-restaurant {
         grid-area: current-restaurant;
     }
+
     .attribute-icons {
         display: flex;
         flex-direction: column;
     }
+
     .reviews {
         grid-area: reviews;
         display: grid;
@@ -209,11 +318,13 @@ footer a {
         grid-template-columns: .4fr .65fr;
         grid-gap: 1em;
     }
+
     .review1 {
         grid-area: review1;
         margin: 2em;
         border: 1px solid black;
     }
+
     .review-images {
         display: grid;
         grid-template-areas: "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
@@ -223,16 +334,19 @@ footer a {
         border: 1px solid blue;
         margin: 0 4% 12% 5%;
     }
+
     .review2 {
         grid-area: review2;
         border: 1px solid yellow;
         margin: 2em;
     }
+
     .review3 {
         grid-area: review3;
         margin: 2em;
         border: 1px solid teal;
     }
+
     .promo2 {
         grid-area: advert;
         border: 3px solid pink;
@@ -240,18 +354,23 @@ footer a {
         height: 90%;
         margin: 0 10% 5% 20%;
     }
+
     .main-img {
         grid-area: main-img;
     }
+
     .thumb-img1 {
         grid-area: thumb-img1;
     }
+
     .thumb-img2 {
         grid-area: thumb-img2;
     }
+
     .thumb-img3 {
         grid-area: thumb-img3;
     }
+
     .site-info {
         grid-area: site-info;
     }

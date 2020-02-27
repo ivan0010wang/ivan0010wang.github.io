@@ -11,6 +11,9 @@ Restaurant Review Website
       1. made a test.html in scripts folder for function testing only;
       2. made a function to show names of all restaurants. It's working but need improvements;
       3. made a function to screen all restaurants with patios.
+### 2020-02-26
+      1. made the names into buttons with on click functions;
+      2. wrote the functions to show restaurant details.
 
 ## Kevin:
 ### 2020-02-24 
@@ -39,6 +42,11 @@ Restaurant Review Website
       2. Fine-tuned layouts for mobile/desktop
       3. Styles applied
       4. Created img grid for reviews section
+### 2020-02-26
+      1. Completed Mobile layout/styles
+      2. Desktop layout/styles applied, near completion
+      3. Fonts/Colors applied
+      4. Re-classed html elements for clarity
 
 
 
