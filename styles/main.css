@@ -67,8 +67,11 @@ ul {
 
 .page-container {
     display: grid;
-    grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
-    grid-template-rows: .15fr 1fr 1fr .35fr 1fr 1fr 1fr .25fr;
+    grid-template-areas: 
+    "nav-bar" 
+    "home" 
+    "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
+    grid-template-rows: .05fr .25fr .25fr .05fr .25fr .5fr .5fr .15fr;
     grid-template-columns: 1fr;
 }
 
@@ -132,7 +135,7 @@ ul {
     text-align: center;
     align-self: center;
     color: #F2E2BF;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .all-restaurants {
