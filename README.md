@@ -47,6 +47,9 @@ Restaurant Review Website
       2. Desktop layout/styles applied, near completion
       3. Fonts/Colors applied
       4. Re-classed html elements for clarity
+### 2020-02-27
+      1.Created async functions to show total restaurants and reviews
+      2.Inserted promise results into DOM
 
 
 
