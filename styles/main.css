@@ -216,8 +216,13 @@ footer a {
     
     .page-container {
         display: grid;
-        grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
-        grid-template-rows: .05fr 1fr .5fr .35fr .5fr .5fr 1fr .35fr;
+        grid-template-areas: "nav-bar" 
+        "home" 
+        "home-cards" 
+        "totals" 
+        "all-restaurants" "current-restaurant" "reviews" 
+        "site-info";
+        grid-template-rows: .05fr 1fr .5fr .15fr .5fr .5fr 1fr .35fr;
         grid-template-columns: 1fr;
     }
     .nav-bar {
