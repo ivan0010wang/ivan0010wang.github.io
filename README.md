@@ -14,6 +14,10 @@ Restaurant Review Website
 ### 2020-02-26
       1. made the names into buttons with on click functions;
       2. wrote the functions to show restaurant details.
+### 2020-02-27
+      1. rewrote the fetch functions into async for readability;
+      2. rewrote all the other functions in .then();
+      3. gave the buttons onclick functions that can only add info in a div.
 
 ## Kevin:
 ### 2020-02-24 
