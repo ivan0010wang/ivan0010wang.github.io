@@ -5,12 +5,23 @@
  *       b. The image on top has class="restaurant-image-top",
  *          the rest of the images has a class="restaurant-image-bottom"
  *       c. change className of the images.
- */ 
+ */
 
-function replaceImageOnTop(){
-  let topImage = document.getElementsByClassName("main-img");
-  
+function replaceImageOnTop() {
+    let topImage = document.getElementsByClassName("review-images-top");
 }
+
+//html code 
+// <span onclick="changeImage('contact.png')">Contact</span>
+// <span onclick="changeImage('address.png')">Address Card</span>
+// <span onclick="changeImage('clock.png')">Clock</span>
+// <img id="imgDisp" src="contact.png" />
+
+//for js
+//     function changeImage(imgName) {
+//         image = document.getElementById('imgDisp');
+//         image.src = imgName;
+//     }
 
 
 
@@ -19,6 +30,7 @@ function replaceImageOnTop(){
  * NEED: a. fetch request
  *       b. display the names in the list
  */
+
 async function makeAListOfRestaurants(){
   const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
   const restaurantInfo = await response.json();
@@ -99,6 +111,7 @@ function showRestaurantDescription(i){
  * NEED: a. find the restaurants with patio/indoor==true
  *       b. innerHTML these restaurants
  */
+
 async function showRestaurantsWithPatio(){
   const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
   const restaurantInfo = await response.json();
@@ -110,7 +123,6 @@ async function showRestaurantsWithPatio(){
       var list = document.getElementById("patio");
       list.insertBefore(newTag, list.childNodes[0]);
     }
-  }
 }
 showRestaurantsWithPatio();
 // End
