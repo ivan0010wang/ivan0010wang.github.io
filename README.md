@@ -30,6 +30,14 @@ Restaurant Review Website
       3. Did footer structure and style
       4. Did grid on page 2
 
+### 2020-02-26
+      1. Finished grid on page 2
+      2. Started on switching pictures with JS
+
+ ### 2020-02-27
+      1. Finished picture switching functionality
+      2. Started working on Combining scores for
+      overall average
 
 ## Jordan:
 ### 2020-02-24 
