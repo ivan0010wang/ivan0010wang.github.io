@@ -95,16 +95,16 @@ function showRestaurantDescription(i) {
     list.insertBefore(newTag, list.childNodes[3]);
 }
 
-async function makeAListOfRestaurants(){
-  const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
-  const restaurantInfo = await response.json();
-  for (var i = 0; i < restaurantInfo.length; i++){
-    var newTag = document.createElement("span");
-    var textnode = document.createTextNode(restaurantInfo[i].name + ' ')
-    newTag.appendChild(textnode);
-    var list = document.getElementById("restaurant");
-    list.insertBefore(newTag, list.childNodes[0]);
-  }
+async function makeAListOfRestaurants() {
+    const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
+    const restaurantInfo = await response.json();
+    for (var i = 0; i < restaurantInfo.length; i++) {
+        var newTag = document.createElement("span");
+        var textnode = document.createTextNode(restaurantInfo[i].name + ' ')
+        newTag.appendChild(textnode);
+        var list = document.getElementById("restaurant");
+        list.insertBefore(newTag, list.childNodes[0]);
+    }
 }
 makeAListOfRestaurants();
 
@@ -118,18 +118,18 @@ makeAListOfRestaurants();
  *       b. innerHTML these restaurants
  */
 
-async function showRestaurantsWithPatio(){
-  const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
-  const restaurantInfo = await response.json();
-  for (var i = 0; i < restaurantInfo.length; i++){
-    if (restaurantInfo[i].patio === true){
-      var newTag = document.createElement("span");
-      var textnode = document.createTextNode(restaurantInfo[i].name + ' ')
-      newTag.appendChild(textnode);
-      var list = document.getElementById("patio");
-      list.insertBefore(newTag, list.childNodes[0]);
+async function showRestaurantsWithPatio() {
+    const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
+    const restaurantInfo = await response.json();
+    for (var i = 0; i < restaurantInfo.length; i++) {
+        if (restaurantInfo[i].patio === true) {
+            var newTag = document.createElement("span");
+            var textnode = document.createTextNode(restaurantInfo[i].name + ' ')
+            newTag.appendChild(textnode);
+            var list = document.getElementById("patio");
+            list.insertBefore(newTag, list.childNodes[0]);
+        }
     }
-  }
 }
 showRestaurantsWithPatio();
 // End
@@ -166,63 +166,63 @@ showRestaurantsWithPatio();
             })
  */
 
-  /////////////////
- // JordanH Code //
+/////////////////
+// JordanH Code //
 /////////////////
 
 //Total Restaurants
-getTotalRestaurants = async () => {
-  const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
-  const restaurants = await response.json();
-  return restaurants.length
+getTotalRestaurants = async() => {
+    const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
+    const restaurants = await response.json();
+    return restaurants.length
 }
 getTotalRestaurants()
 
 const totalRestaurants = getTotalRestaurants()
-totalRestaurants.then( a => {
-  var newTag = document.createElement("span");
-  var textnode = document.createTextNode(a)
-  newTag.appendChild(textnode);
- let target = document.getElementById('totalRestaurants')
- target.insertBefore(newTag, target.childNodes[0])
+totalRestaurants.then(a => {
+    var newTag = document.createElement("span");
+    var textnode = document.createTextNode(a)
+    newTag.appendChild(textnode);
+    let target = document.getElementById('totalRestaurants')
+    target.insertBefore(newTag, target.childNodes[0])
 })
 
 //Total Reviews
-getTotalReviews = async () => {
-  const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews");
-  const reviews = await response.json();
-  return reviews.length;
-  }
-  getTotalReviews()
+getTotalReviews = async() => {
+    const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews");
+    const reviews = await response.json();
+    return reviews.length;
+}
+getTotalReviews()
 
 const totalReviews = getTotalReviews()
-totalReviews.then( a => {
-  var newTag = document.createElement("span");
-  var textnode = document.createTextNode(a)
-  newTag.appendChild(textnode);
- let target = document.getElementById('totalReviews')
- target.insertBefore(newTag, target.childNodes[0])
+totalReviews.then(a => {
+    var newTag = document.createElement("span");
+    var textnode = document.createTextNode(a)
+    newTag.appendChild(textnode);
+    let target = document.getElementById('totalReviews')
+    target.insertBefore(newTag, target.childNodes[0])
 })
 
 //Array of Id's
-restaurantIds = async () => {
-  const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews");
-  const restaurants = await response.json();
-  for (let i = 0; i < restaurants.length; i++){
-      let idArray = restaurants[i].idrestaurant;
-      return idArray
-  }
+restaurantIds = async() => {
+    const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews");
+    const restaurants = await response.json();
+    for (let i = 0; i < restaurants.length; i++) {
+        let idArray = restaurants[i].idrestaurant;
+        return idArray
+    }
 }
 restaurantIds()
 
 //Array of Ratings
-restaurantRatings = async () => {
-  const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews");
-  const restaurants = await response.json();
-  for (let i = 0; i < restaurants.length; i++){
-      let ratingArray = restaurants[i].rating;
-      return ratingArray
-  }
+restaurantRatings = async() => {
+    const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews");
+    const restaurants = await response.json();
+    for (let i = 0; i < restaurants.length; i++) {
+        let ratingArray = restaurants[i].rating;
+        return ratingArray
+    }
 }
 restaurantRatings()
 
