@@ -1,147 +1,117 @@
-/** When one of the images on the bottom is clicked, the top
+/** 
+ * When one of the images on the bottom is clicked, the top
  * picture should switch position with the clicked image. 
- * 
- * NEED: a. onclick event
- *       b. The image on top has class="restaurant-image-top",
- *          the rest of the images has a class="restaurant-image-bottom"
- *       c. change className of the images.
  */
 
-function replaceImageOnTop() {
-    let topImage = document.getElementsByClassName("review-images-top");
-}
-
-//html code 
-// <span onclick="changeImage('contact.png')">Contact</span>
-// <span onclick="changeImage('address.png')">Address Card</span>
-// <span onclick="changeImage('clock.png')">Clock</span>
-// <img id="imgDisp" src="contact.png" />
-
-//for js
-//     function changeImage(imgName) {
-//         image = document.getElementById('imgDisp');
-//         image.src = imgName;
-//     }
 
 
-
-/** The name of the restaurants should come from the CMS
- * 
- * NEED: a. fetch request
- *       b. display the names in the list
+/** 
+ * Fetch the info of the restaurants from the CMS
  */
-
-async function makeAListOfRestaurants(){
+async function getRestaurantsInfo(){
   const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
-  const restaurantInfo = await response.json();
-  for (var i = 0; i < restaurantInfo.length; i++){
-    var newTag = document.createElement("button");
-    var textnode = document.createTextNode(restaurantInfo[i].name + ' ');
-    newTag.setAttribute('onclick', 'showRestaurantDetails(i)');
-    // The line above need to be tested.
-    // If not working, try researching .setAttribute.onclick = function...
-    newTag.appendChild(textnode);
-    var list = document.getElementById("restaurant");
-    list.insertBefore(newTag, list.childNodes[0]);
-  }
+  var restaurantInfo = await response.json();
+  return restaurantInfo;
 }
-makeAListOfRestaurants();
-
-function giveMeFive(){
-  console.log("FIVE!");
-}
-
-function showRestaurantDetails(i){
-  showRestaurantName(i);
-  showRestaurantType(i);
-  showRestaurantDining(i);
-  showRestaurantDescription(i);
-}
-
-function showRestaurantName(i){
-  var newTag = document.createElement("h1");
-  var textnode = document.createTextNode("Name: " + restaurantInfo[i].name);
-  newTag.appendChild(textnode);
-  var list = document.getElementById("info");
-  list.insertAfter(newTag, list.childNodes[0]);
-}
-function showRestaurantType(i){
-  var newTag = document.createElement("span");
-  var textnode = document.createTextNode("Cuisine " + restaurantInfo[i].type);
-  newTag.appendChild(textnode);
-  var list = document.getElementById("info");
-  list.insertAfter(newTag, list.childNodes[1]);
-}
-function showRestaurantDining(i){
-  var newTag = document.createElement("span");
-  var textnode = document.createTextNode("Dining " + restaurantInfo[i].dining);
-  newTag.appendChild(textnode);
-  var list = document.getElementById("info");
-  list.insertAfter(newTag, list.childNodes[2]);
-}
-function showRestaurantDescription(i){
-  var newTag = document.createElement("p");
-  var textnode = document.createTextNode("Description" + restaurantInfo[i].description);
-  newTag.appendChild(textnode);
-  var list = document.getElementById("info");
-  list.insertBefore(newTag, list.childNodes[3]);
-}
+var restaurantInfo = getRestaurantsInfo();
 // End
 
 
 
-// async function makeAListOfRestaurants(){
-//     const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
-//     const restaurantInfo = await response.json();
-//     for (var i = 0; i < restaurantInfo.length; i++){
-//       var newTag = document.createElement("button");
-//       var textnode = document.createTextNode(restaurantInfo[i].name + ' ')
-//       // newTag.setAttribute('onclick', giveMeFive());
-//       newTag.appendChild(textnode);
-//       var list = document.getElementById("restaurantNames");
-//       list.insertBefore(newTag, list.childNodes[0]);
-//     }
-//   }
-//   makeAListOfRestaurants();
-
-
-/** A function to display restaurants
- * with indoor/patio seatings based on the weather.
- * 
- * NEED: a. find the restaurants with patio/indoor==true
- *       b. innerHTML these restaurants
+/**
+ * The names of the restaurants should be buttons with dynamic id
  */
-
-async function showRestaurantsWithPatio(){
-  const response = await fetch("http://red-strapi-postgres-heroku.herokuapp.com/Restaurants");
-  const restaurantInfo = await response.json();
-  for (var i = 0; i < restaurantInfo.length; i++){
-    if (restaurantInfo[i].patio === true){
+restaurantInfo.then(
+  info => {
+    for (var i = 0; i < info.length; i++){
       var newTag = document.createElement("button");
-      var textnode = document.createTextNode(restaurantInfo[i].name + ' ')
+      var textnode = document.createTextNode(info[i].name);
       newTag.appendChild(textnode);
-      var list = document.getElementById("patio");
+      newTag.setAttribute('id','restaurantButton'+i)
+      var list = document.getElementById("restaurantNames");
       list.insertBefore(newTag, list.childNodes[0]);
     }
-}
-showRestaurantsWithPatio();
+  }
+)
 // End
 
 
 
-/** When a restaurant is clicked, the restaurant info
- * should be updated.
- * 
- * NEED: a. onclick event
- *       b. display the perticular element
+/**
+ * A function to avoid repeating code when creating new nodes
+ * @param {*} newElement is the new HTML tag you want to create
+ * @param {*} text1 is the first part of the text node
+ * @param {*} text2 is the second part of the text node, if not needed, just say 'null'
+ * @param {*} targetID is the id in html where the node will be placed
+ * @param {*} where is where the node will be placed in the targetID
+ */
+function writeOnWebPage(newElement,text1,text2,targetID,where){
+  var newTag = document.createElement(newElement);
+  var textNode = document.createTextNode(text1+text2);
+  newTag.appendChild(textNode);
+  var list = document.getElementById(targetID);
+  // Here we need to somehow delete whatever is already there in the div
+  list.insertBefore(newTag, list.childNodes[where]);
+}
+// End
+
+
+
+/**
+ * Give specific onclick functions to each created button
+ */
+restaurantInfo.then(
+  info => {
+    for (var i = 0; i < info.length; i++){
+      var targetButton = document.getElementById('restaurantButton'+i);
+      const name = info[i].name;
+      const type = info[i].type;
+      const dining = info[i].dining;
+      const description = info[i].description;
+      targetButton.addEventListener("click", () => {
+        writeOnWebPage('h1', 'Name: ', name, 'details', 0);
+        writeOnWebPage('span', 'Cuisine ', type, 'details', 1);
+        writeOnWebPage('span', 'Dining ', dining, 'details', 2);
+        writeOnWebPage('p', 'Description ', description, 'details', 3);
+      });
+    }
+  }
+)
+// End
+
+
+
+/** 
+ * Display restaurants with patio.
+ */
+restaurantInfo.then(
+  info => {
+    for (var i = 0; i < info.length; i++){
+      if (info[i].patio === true){
+        var newTag = document.createElement("button");
+        var textnode = document.createTextNode(info[i].name + ' ')
+        newTag.appendChild(textnode);
+        newTag.setAttribute('id','restaurantButton'+i)
+        var list = document.getElementById("patio");
+        list.insertBefore(newTag, list.childNodes[0]);
+      }
+    }
+  }
+)
+// End
+
+
+
+/** 
+ * When a restaurant is clicked, the restaurant info
+ * should show in the restaurant detail section.
  */
 
 
 
 
-/** The user review should be added to the cms.
- * NEED: a. assign user input to a object variable
- *       b. patch request
+/** 
+ * The user review should be added to the cms.
  */
 
 
