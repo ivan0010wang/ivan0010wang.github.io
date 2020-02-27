@@ -21,6 +21,7 @@ h2 {
 p {
     color: #F7F7F7;
     font-family: 'Montserrat';
+    font-size: 17px;
 }
 
 img {
@@ -66,8 +67,11 @@ ul {
 
 .page-container {
     display: grid;
-    grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
-    grid-template-rows: .15fr 1fr 1fr .35fr 1fr 1fr 1fr .25fr;
+    grid-template-areas: 
+    "nav-bar" 
+    "home" 
+    "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
+    grid-template-rows: .05fr .25fr .25fr .05fr .25fr .5fr .5fr .15fr;
     grid-template-columns: 1fr;
 }
 
@@ -131,7 +135,7 @@ ul {
     text-align: center;
     align-self: center;
     color: #F2E2BF;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .all-restaurants {
@@ -142,6 +146,12 @@ ul {
     font-family: 'Montserrat';
     color: #A80000;
     font-weight: 300i;
+}
+
+.promo1 {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
 }
 
 .current-restaurant {
@@ -262,9 +272,9 @@ footer a {
     }
 
     .home-statement {
-        margin-left: 19em;
-        margin-right: 19em;
-        margin-top: 10em;
+        margin-left: 10em;
+        margin-right: 10em;
+        margin-top: 2em;
     }
 
     .home-cards {

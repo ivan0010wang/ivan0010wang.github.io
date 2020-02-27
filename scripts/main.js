@@ -10,15 +10,15 @@
 
 function changeImage1() {
 
-    document.getElementById("id1").src = "./images/a.jpg"
+    document.getElementById("id1").src = "/images/joseph-gonzalez-egg-unsplash-resized.jpg"
 }
 
 function changeImage2() {
-    document.getElementById("id1").src = "./images/b.jpg"
+    document.getElementById("id1").src = "/images/jay-wennington-N_Y88TWmGwA-unsplash-resized.jpg"
 }
 
 function changeImage3() {
-    document.getElementById("id1").src = "./images/c.jpg"
+    document.getElementById("id1").src = "/images/brooke-lark-oaz0raysASk-unsplash-resized.jpg"
 }
 
 
