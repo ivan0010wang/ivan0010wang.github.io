@@ -21,6 +21,7 @@ h2 {
 p {
     color: #F7F7F7;
     font-family: 'Montserrat';
+    font-size: 17px;
 }
 
 img {
@@ -144,6 +145,12 @@ ul {
     font-weight: 300i;
 }
 
+.promo1 {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
 .current-restaurant {
     grid-area: current-restaurant;
     text-align: center;
@@ -262,9 +269,9 @@ footer a {
     }
 
     .home-statement {
-        margin-left: 19em;
-        margin-right: 19em;
-        margin-top: 10em;
+        margin-left: 10em;
+        margin-right: 10em;
+        margin-top: 2em;
     }
 
     .home-cards {
