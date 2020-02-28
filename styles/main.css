@@ -71,7 +71,7 @@ ul {
     "nav-bar" 
     "home" 
     "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
-    grid-template-rows: .05fr .25fr .25fr .05fr .25fr .5fr .5fr .15fr;
+    grid-template-rows: .05fr .25fr .15fr .05fr .25fr .5fr .5fr .15fr;
     grid-template-columns: 1fr;
 }
 
@@ -289,27 +289,28 @@ footer a {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        max-height: 85%;
     }
 
     .top-restaurants {
         border: 5px solid #F2E2BF;
         width: 18em;
         position: relative;
-        margin-top: -10%;
+        margin-top: -20%;
     }
 
     .latest-reviews {
         border: 5px solid #F2E2BF;
         width: 20em;
         position: relative;
-        margin-top: -10%;
+        margin-top: -20%;
     }
 
     .weather {
         border: 5px solid #F2E2BF;
         width: 18em;
         position: relative;
-        margin-top: -10%;
+        margin-top: -20%;
     }
 
     .totals {
