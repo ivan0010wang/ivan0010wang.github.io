@@ -164,6 +164,28 @@ totalReviews.then(a => {
     target.insertBefore(newTag, target.childNodes[0]);
 });
 
+//Sort Reviews by Date
+getLatestReviews = async () => {
+  const response = await fetch(
+    "http://red-strapi-postgres-heroku.herokuapp.com/Reviews"
+  );
+  const reviews = await response.json();
+  for (let i = 0; i < reviews.length; i++) {
+    let reviewArray = reviews[i].updated_at;
+    return reviewArray;
+  };
+}
+getLatestReviews()
+
+// const latestReviews = getLatestReviews();
+// latestReviews.then(a => {
+//   var newTag = document.createElement("span");
+//   var textnode = document.createTextNode(a);
+//   newTag.appendChild(textnode);
+//   let target = document.getElementById("latestReviews");
+//   target.insertBefore(newTag, target.childNodes[0]);
+// });
+
 //Array of Id's
 restaurantIds = async() => {
     const response = await fetch(

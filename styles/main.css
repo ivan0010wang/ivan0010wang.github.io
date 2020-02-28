@@ -71,7 +71,7 @@ ul {
     "nav-bar" 
     "home" 
     "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
-    grid-template-rows: .05fr .25fr .25fr .05fr .25fr .5fr .5fr .15fr;
+    grid-template-rows: .05fr .25fr .15fr .05fr .25fr .5fr .5fr .15fr;
     grid-template-columns: 1fr;
 }
 
@@ -112,7 +112,7 @@ ul {
 
 .home-statement {
     position: absolute;
-    top: 20%;
+    top: 15%;
 }
 
 .home-cards {
@@ -176,14 +176,16 @@ ul {
 }
 
 .review-images {
-    grid-template-areas: "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
+    grid-template-rows: 1fr .5fr;
+    grid-template-columns: .35fr .33fr .35fr;
     grid-gap: .25em;
 }
 
 .main-img {
     grid-area: main-img;
+    max-width: 100%;
 }
 
 .thumb-img1 {
@@ -196,6 +198,11 @@ ul {
 
 .thumb-img3 {
     grid-area: thumb-img3;
+}
+
+.promo2 {
+    display: flex;
+    justify-content: center;
 }
 
 footer {
@@ -282,27 +289,28 @@ footer a {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        max-height: 85%;
     }
 
     .top-restaurants {
         border: 5px solid #F2E2BF;
         width: 18em;
         position: relative;
-        margin-top: -10%;
+        margin-top: -20%;
     }
 
     .latest-reviews {
         border: 5px solid #F2E2BF;
         width: 20em;
         position: relative;
-        margin-top: -10%;
+        margin-top: -20%;
     }
 
     .weather {
         border: 5px solid #F2E2BF;
         width: 18em;
         position: relative;
-        margin-top: -10%;
+        margin-top: -20%;
     }
 
     .totals {
