@@ -176,14 +176,16 @@ ul {
 }
 
 .review-images {
-    grid-template-areas: "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
+    grid-template-rows: 1fr .5fr;
+    grid-template-columns: .35fr .33fr .35fr;
     grid-gap: .25em;
 }
 
 .main-img {
     grid-area: main-img;
+    max-width: 100%;
 }
 
 .thumb-img1 {
@@ -196,6 +198,10 @@ ul {
 
 .thumb-img3 {
     grid-area: thumb-img3;
+}
+
+.promo2 {
+    place-self: center;
 }
 
 footer {
