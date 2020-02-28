@@ -14,6 +14,10 @@ Restaurant Review Website
 ### 2020-02-26
       1. made the names into buttons with on click functions;
       2. wrote the functions to show restaurant details.
+### 2020-02-27
+      1. rewrote the fetch functions into async for readability;
+      2. rewrote all the other functions in .then();
+      3. gave the buttons onclick functions that can only add info in a div.
 
 ## Kevin:
 ### 2020-02-24 
@@ -30,6 +34,14 @@ Restaurant Review Website
       3. Did footer structure and style
       4. Did grid on page 2
 
+### 2020-02-26
+      1. Finished grid on page 2
+      2. Started on switching pictures with JS
+
+ ### 2020-02-27
+      1. Finished picture switching functionality
+      2. Started working on Combining scores for
+      overall average
 
 ## Jordan:
 ### 2020-02-24 

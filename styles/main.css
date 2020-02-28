@@ -112,7 +112,7 @@ ul {
 
 .home-statement {
     position: absolute;
-    top: 20%;
+    top: 15%;
 }
 
 .home-cards {
@@ -201,7 +201,8 @@ ul {
 }
 
 .promo2 {
-    place-self: center;
+    display: flex;
+    justify-content: center;
 }
 
 footer {
