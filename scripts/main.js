@@ -2,11 +2,11 @@
  * Fetch the info of the restaurants from the CMS
  */
 async function getRestaurantsInfo() {
-  const response = await fetch(
-    "http://red-strapi-postgres-heroku.herokuapp.com/Restaurants"
-  );
-  var restaurantInfo = await response.json();
-  return restaurantInfo;
+    const response = await fetch(
+        "http://red-strapi-postgres-heroku.herokuapp.com/Restaurants"
+    );
+    var restaurantInfo = await response.json();
+    return restaurantInfo;
 }
 var restaurantInfo = getRestaurantsInfo();
 // End
@@ -127,68 +127,70 @@ restaurantInfo.then(info => {
 //////////////////
 
 //Total Restaurants
-getTotalRestaurants = async () => {
-  const response = await fetch(
-    "http://red-strapi-postgres-heroku.herokuapp.com/Restaurants"
-  );
-  const restaurants = await response.json();
-  return restaurants.length;
+getTotalRestaurants = async() => {
+    const response = await fetch(
+        "http://red-strapi-postgres-heroku.herokuapp.com/Restaurants"
+    );
+    const restaurants = await response.json();
+    return restaurants.length;
 };
 getTotalRestaurants();
 
 const totalRestaurants = getTotalRestaurants();
 totalRestaurants.then(a => {
-  var newTag = document.createElement("span");
-  var textnode = document.createTextNode(a);
-  newTag.appendChild(textnode);
-  let target = document.getElementById("totalRestaurants");
-  target.insertBefore(newTag, target.childNodes[0]);
+    var newTag = document.createElement("span");
+    var textnode = document.createTextNode(a);
+    newTag.appendChild(textnode);
+    let target = document.getElementById("totalRestaurants");
+    target.insertBefore(newTag, target.childNodes[0]);
 });
 
 //Total Reviews
-getTotalReviews = async () => {
-  const response = await fetch(
-    "http://red-strapi-postgres-heroku.herokuapp.com/Reviews"
-  );
-  const reviews = await response.json();
-  return reviews.length;
+getTotalReviews = async() => {
+    const response = await fetch(
+        "http://red-strapi-postgres-heroku.herokuapp.com/Reviews"
+    );
+    const reviews = await response.json();
+    return reviews.length;
 };
 getTotalReviews();
 
 const totalReviews = getTotalReviews();
 totalReviews.then(a => {
-  var newTag = document.createElement("span");
-  var textnode = document.createTextNode(a);
-  newTag.appendChild(textnode);
-  let target = document.getElementById("totalReviews");
-  target.insertBefore(newTag, target.childNodes[0]);
+    var newTag = document.createElement("span");
+    var textnode = document.createTextNode(a);
+    newTag.appendChild(textnode);
+    let target = document.getElementById("totalReviews");
+    target.insertBefore(newTag, target.childNodes[0]);
 });
 
 //Array of Id's
-restaurantIds = async () => {
-  const response = await fetch(
-    "http://red-strapi-postgres-heroku.herokuapp.com/Reviews"
-  );
-  const restaurants = await response.json();
-  for (let i = 0; i < restaurants.length; i++) {
-    let idArray = restaurants[i].idrestaurant;
-    return idArray;
-  }
+restaurantIds = async() => {
+    const response = await fetch(
+        "http://red-strapi-postgres-heroku.herokuapp.com/Reviews"
+    );
+    const restaurants = await response.json();
+    for (let i = 0; i < restaurants.length; i++) {
+        let idArray = restaurants[i].idrestaurant;
+        return idArray;
+    }
 };
 restaurantIds();
 
 //Array of Ratings
-restaurantRatings = async () => {
-  const response = await fetch(
-    "http://red-strapi-postgres-heroku.herokuapp.com/Reviews"
-  );
-  const restaurants = await response.json();
-  for (let i = 0; i < restaurants.length; i++) {
-    let ratingArray = restaurants[i].rating;
-    return ratingArray;
-  }
+restaurantRatings = async() => {
+    const response = await fetch(
+        "http://red-strapi-postgres-heroku.herokuapp.com/Reviews"
+    );
+    const restaurants = await response.json();
+    for (let i = 0; i < restaurants.length; i++) {
+        let ratingArray = restaurants[i].rating;
+        return ratingArray;
+    }
 };
 restaurantRatings();
+
+//use restaurantIds() and restaurantRatings() to get overall average for restaurants
 
 //Associate Ratings to Id's
 // rankRestaurants = async () => {
