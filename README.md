@@ -18,6 +18,11 @@ Restaurant Review Website
       1. rewrote the fetch functions into async for readability;
       2. rewrote all the other functions in .then();
       3. gave the buttons onclick functions that can only add info in a div.
+### 2020-02-28
+      1. wrote a function to calculate the average score of a restaurant;
+      2. things to do over the weekend:
+            a. post request for user comment;
+            b. link the score to the restaurant, ie. when I click the button, the score of the restaurant should pop up.
 
 ## Kevin:
 ### 2020-02-24 
