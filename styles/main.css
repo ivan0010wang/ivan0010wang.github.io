@@ -367,7 +367,55 @@ footer a {
     .thumb-img3 {
         grid-area: thumb-img3;
     }
+    footer {
+        max-height: 80%;
+    }
     .site-info {
         grid-area: site-info;
+        display: grid;
+        grid-template-areas: "logo title . about" "feature . . about" "feature . . ." "copyright . . names";
+        grid-template-rows: 2fr 2fr 2fr 2fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .logo-footer {
+        display: flex;
+        align-content: flex-start;
+        justify-content: space-around;
+        margin-right: auto;
+        margin-bottom: auto;
+        grid-area: logo;
+    }
+    .logo-footer img {
+        margin-left: 8em;
+        margin-top: 2em;
+    }
+    .logo-footer h1 {
+        margin-left: 2em;
+        font-size: 4em;
+        margin-top: 0;
+        grid-area: title;
+    }
+    .about-project {
+        display: flex;
+        margin-left: 20em;
+    }
+    .about-project p {
+        font-size: 2em;
+    }
+    .title-footer {
+        justify-self: flex-start;
+        align-self: start;
+        grid-area: about;
+    }
+    .site-features {
+        grid-area: feature;
+    }
+    .copyright {
+        justify-self: flex-end;
+        align-self: start;
+        grid-area: copyright;
+    }
+    .dev-names {
+        grid-area: names;
     }
 }

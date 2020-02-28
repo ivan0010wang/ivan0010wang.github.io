@@ -28,6 +28,9 @@ function changeImage3() {
     document.getElementById("id1").src =
         "/images/brooke-lark-oaz0raysASk-unsplash-resized.jpg";
 }
+
+
+
 //End
 
 /**
@@ -96,6 +99,7 @@ restaurantInfo.then(info => {
             newTag.setAttribute("id", "restaurantButton" + i);
             var list = document.getElementById("patio");
             list.insertBefore(newTag, list.childNodes[0]);
+            //create button
         }
     }
 });
@@ -165,15 +169,15 @@ totalReviews.then(a => {
 });
 
 //Sort Reviews by Date
-getLatestReviews = async () => {
-  const response = await fetch(
-    "http://red-strapi-postgres-heroku.herokuapp.com/Reviews"
-  );
-  const reviews = await response.json();
-  for (let i = 0; i < reviews.length; i++) {
-    let reviewArray = reviews[i].updated_at;
-    return reviewArray;
-  };
+getLatestReviews = async() => {
+    const response = await fetch(
+        "http://red-strapi-postgres-heroku.herokuapp.com/Reviews"
+    );
+    const reviews = await response.json();
+    for (let i = 0; i < reviews.length; i++) {
+        let reviewArray = reviews[i].updated_at;
+        return reviewArray;
+    };
 }
 getLatestReviews()
 
