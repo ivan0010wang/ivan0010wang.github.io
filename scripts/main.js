@@ -15,18 +15,18 @@ var restaurantInfo = getRestaurantsInfo();
  * Put the clicked img on top
  */
 function changeImage1() {
-    document.getElementById("id1").src =
-        "/images/joseph-gonzalez-egg-unsplash-resized.jpg";
+  document.getElementById("id1").src =
+    "/images/joseph-gonzalez-egg-unsplash-resized.jpg";
 }
 
 function changeImage2() {
-    document.getElementById("id1").src =
-        "/images/jay-wennington-N_Y88TWmGwA-unsplash-resized.jpg";
+  document.getElementById("id1").src =
+    "/images/jay-wennington-N_Y88TWmGwA-unsplash-resized.jpg";
 }
 
 function changeImage3() {
-    document.getElementById("id1").src =
-        "/images/brooke-lark-oaz0raysASk-unsplash-resized.jpg";
+  document.getElementById("id1").src =
+    "/images/brooke-lark-oaz0raysASk-unsplash-resized.jpg";
 }
 
 
@@ -37,14 +37,14 @@ function changeImage3() {
  * The names of the restaurants should be buttons with dynamic id
  */
 restaurantInfo.then(info => {
-    for (var i = 0; i < info.length; i++) {
-        var newTag = document.createElement("button");
-        var textnode = document.createTextNode(info[i].name);
-        newTag.appendChild(textnode);
-        newTag.setAttribute("id", "restaurantButton" + i);
-        var list = document.getElementById("restaurantNames");
-        list.insertBefore(newTag, list.childNodes[0]);
-    }
+  for (var i = 0; i < info.length; i++) {
+    var newTag = document.createElement("button");
+    var textnode = document.createTextNode(info[i].name);
+    newTag.appendChild(textnode);
+    newTag.setAttribute("id", "restaurantButton" + i);
+    var list = document.getElementById("restaurantNames");
+    list.insertBefore(newTag, list.childNodes[0]);
+  }
 });
 // End
 
@@ -57,11 +57,11 @@ restaurantInfo.then(info => {
  * @param {*} where is where the node will be placed in the targetID
  */
 function writeOnWebPage(newElement, text1, text2, targetID, where) {
-    var newTag = document.createElement(newElement);
-    var textNode = document.createTextNode(text1 + text2);
-    newTag.appendChild(textNode);
-    var list = document.getElementById(targetID);
-    list.insertBefore(newTag, list.childNodes[where]);
+  var newTag = document.createElement(newElement);
+  var textNode = document.createTextNode(text1 + text2);
+  newTag.appendChild(textNode);
+  var list = document.getElementById(targetID);
+  list.insertBefore(newTag, list.childNodes[where]);
 }
 //End
 
@@ -70,20 +70,20 @@ function writeOnWebPage(newElement, text1, text2, targetID, where) {
  * should show in the restaurant detail section.
  */
 restaurantInfo.then(info => {
-    for (var i = 0; i < info.length; i++) {
-        var targetButton = document.getElementById("restaurantButton" + i);
-        const name = info[i].name;
-        const type = info[i].type;
-        const dining = info[i].dining;
-        const description = info[i].description;
-        targetButton.addEventListener("click", () => {
-            document.getElementById('details').innerHTML = '';
-            writeOnWebPage("h1", "Name: ", name, "details", 0);
-            writeOnWebPage("span", "Cuisine: ", type, "details", 1);
-            writeOnWebPage("span", "Dining: ", dining, "details", 2);
-            writeOnWebPage("p", "Description: ", description, "details", 3);
-        });
-    }
+  for (var i = 0; i < info.length; i++) {
+    var targetButton = document.getElementById("restaurantButton" + i);
+    const name = info[i].name;
+    const type = info[i].type;
+    const dining = info[i].dining;
+    const description = info[i].description;
+    targetButton.addEventListener("click", () => {
+      document.getElementById('details').innerHTML='';
+      writeOnWebPage("h1", "Name: ", name, "details", 0);
+      writeOnWebPage("span", "Cuisine: ", type, "details", 1);
+      writeOnWebPage("span", "Dining: ", dining, "details", 2);
+      writeOnWebPage("p", "Description: ", description, "details", 3);
+    });
+  }
 });
 // End
 
@@ -91,17 +91,16 @@ restaurantInfo.then(info => {
  * Display restaurants with patio.
  */
 restaurantInfo.then(info => {
-    for (var i = 0; i < info.length; i++) {
-        if (info[i].patio === true) {
-            var newTag = document.createElement("button");
-            var textnode = document.createTextNode(info[i].name + " ");
-            newTag.appendChild(textnode);
-            newTag.setAttribute("id", "restaurantButton" + i);
-            var list = document.getElementById("patio");
-            list.insertBefore(newTag, list.childNodes[0]);
-            //create button
-        }
+  for (var i = 0; i < info.length; i++) {
+    if (info[i].patio === true) {
+      var newTag = document.createElement("button");
+      var textnode = document.createTextNode(info[i].name + " ");
+      newTag.appendChild(textnode);
+      newTag.setAttribute("id", "restaurantButton" + i);
+      var list = document.getElementById("patio");
+      list.insertBefore(newTag, list.childNodes[0]);
     }
+  }
 });
 // End
 

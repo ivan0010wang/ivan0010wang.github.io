@@ -67,8 +67,13 @@ ul {
 
 .page-container {
     display: grid;
-    grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
-    grid-template-rows: .05fr .25fr .15fr .05fr .25fr .5fr .5fr .15fr;
+    grid-template-areas: 
+    "nav-bar" 
+    "home" 
+    "home-cards" 
+    "totals" 
+    "all-restaurants" "current-restaurant" "reviews" "site-info";
+    grid-template-rows: .05fr .25fr .15fr .05fr .15fr .5fr .5fr .15fr;
     grid-template-columns: 1fr;
 }
 
@@ -154,10 +159,13 @@ ul {
 .current-restaurant {
     grid-area: current-restaurant;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .current-restaurant p {
     font-weight: 400;
+    margin: 0 3em;
 }
 
 .attribute-icons {
