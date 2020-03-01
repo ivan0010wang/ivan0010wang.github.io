@@ -368,12 +368,13 @@ footer a {
         grid-area: thumb-img3;
     }
     footer {
-        max-height: 80%;
+        max-height: 60%;
+        margin: 0 5em;
     }
     .site-info {
         grid-area: site-info;
         display: grid;
-        grid-template-areas: "logo title . about" "feature . . about" "feature . . ." "copyright . . names";
+        grid-template-areas: "logo title . about" "feature . . about" "feature . . ." "copyright names names names";
         grid-template-rows: 2fr 2fr 2fr 2fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
@@ -411,11 +412,13 @@ footer a {
         grid-area: feature;
     }
     .copyright {
-        justify-self: flex-end;
-        align-self: start;
         grid-area: copyright;
     }
     .dev-names {
         grid-area: names;
+        margin-right: 10em;
+    }
+    .dev-names a {
+        font-size: 2em;
     }
 }
