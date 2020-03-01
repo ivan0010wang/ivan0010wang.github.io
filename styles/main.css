@@ -67,12 +67,7 @@ ul {
 
 .page-container {
     display: grid;
-    grid-template-areas: 
-    "nav-bar" 
-    "home" 
-    "home-cards" 
-    "totals" 
-    "all-restaurants" "current-restaurant" "reviews" "site-info";
+    grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
     grid-template-rows: .05fr .25fr .15fr .05fr .15fr .5fr .5fr .15fr;
     grid-template-columns: 1fr;
 }
@@ -166,6 +161,20 @@ ul {
 .current-restaurant p {
     font-weight: 400;
     margin: 0 3em;
+}
+
+form {
+    margin: 2em;
+    color: black;
+    line-height: 2em;
+}
+
+input {
+    width: 70%;
+}
+
+textarea {
+    width: 70%;
 }
 
 .attribute-icons {
@@ -376,8 +385,10 @@ footer a {
         grid-area: thumb-img3;
     }
     footer {
+        max-width: 100%;
         max-height: 60%;
         margin: 0 5em;
+        font-size: 1.2em;
     }
     .site-info {
         grid-area: site-info;
