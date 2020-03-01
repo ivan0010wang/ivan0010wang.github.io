@@ -23,6 +23,9 @@ Restaurant Review Website
       2. things to do over the weekend:
             a. post request for user comment;
             b. link the score to the restaurant, ie. when I click the button, the score of the restaurant should pop up.
+### 2020-02-29
+      1. wrote the function to properly display score when a restaurant is clicked;
+      2. wrote the function to show 3 restaurants with highest score.
 
 ## Kevin:
 ### 2020-02-24 
