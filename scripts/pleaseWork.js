@@ -100,7 +100,7 @@ restaurantInfo.then(info => {
                 writeOnWebPage("span", "Dining: ", dining, "restaurant-details", 2);
                 writeOnWebPage("span", "Score: ", score, "restaurant-details", 3);
                 writeOnWebPage("a", "Website: ", website, "restaurant-details", 4, 'href', website);
-                writeOnWebPage("p", "Description: ", description, "restaurant-details", 5);
+                writeOnWebPage("p", "", description, "restaurant-details", 5);
             })
         });
     }
@@ -109,44 +109,26 @@ restaurantInfo.then(info => {
 
 
 /**
- * Compare the average score of all restaurants and list the top 4
+ * Compare the average score of all restaurants and list the top 3
  */
 restaurantInfo.then(info => {
-    const allAverageScores = new Array;
+    const allAverageScores = new Array();
     for (let i = 0; i < info.length; i++) {
+        const restaurantName = info[i].name;
         const restaurantID = info[i].idnumber;
         calculateAverageScore(restaurantID).then(score => {
-            allAverageScores.push(score)
+            const restaurantObject = {'name':restaurantName, 'score': score}
+            allAverageScores.push(restaurantObject);
+            var newArraySortedByScore = allAverageScores.sort((a,b) => {return b.score - a.score});
+            document.getElementById("top-restaurants").innerHTML='';
+            writeOnWebPage("p", 'No.1 ' + newArraySortedByScore[0].name, ': ' + newArraySortedByScore[0].score + '/5.0', "top-restaurants", 0);
+            writeOnWebPage("p", 'No.2 ' + newArraySortedByScore[1].name, ': ' + newArraySortedByScore[1].score + '/5.0', "top-restaurants", 1);
+            writeOnWebPage("p", 'No.3 ' + newArraySortedByScore[2].name, ': ' + newArraySortedByScore[2].score + '/5.0', "top-restaurants", 2);
         })
     }
 });
+// End
 
-
-/**
- * A function to rank all objects in an array based on a particular key:value
- * in the objects
- * @param {*} myArray is the array need to be sorted
- */
-// var sampleArrayOfObjects = [
-//     {id: 1, averageScore: 5},
-//     {id: 2, averageScore: 3},
-//     {id: 3, averageScore: 2},
-//     {id: 5, averageScore: 1},
-//     {id: 4, averageScore: 4}
-// ]
-
-// function sortMyArray(myArray) {
-//     myArray.forEach(function (currentObjectInArray, i) {
-        
-//         currentObjectInArray.rank = i;
-//     });
-//     _.sortBy(myArray, 'averageScore').forEach(function (currentObjectInArray, i) {
-//         myArray[currentObjectInArray.rank].rank = i;
-//     })
-//     return myArray;
-// }
-// // End
-// sortMyArray(sampleArrayOfObjects);
 
 /**
  * Put the clicked img on top
