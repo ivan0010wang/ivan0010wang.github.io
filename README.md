@@ -16,8 +16,16 @@ Restaurant Review Website
       2. wrote the functions to show restaurant details.
 ### 2020-02-27
       1. rewrote the fetch functions into async for readability;
-      2. rewrote all the other functions in .then();
-      3. gave the buttons onclick functions that can only add info in a div.
+      2. rewrote all the other functions in callback function;
+      3. gave the buttons onclick functions that can only add info in a div (should replace info instead of adding).
+### 2020-02-28
+      1. wrote a function to calculate the average score of a restaurant;
+      2. things to do over the weekend:
+            a. post request for user comment;
+            b. link the score to the restaurant, ie. when I click the button, the score of the restaurant should pop up.
+### 2020-02-29
+      1. wrote the function to properly display score when a restaurant is clicked;
+      2. wrote the function to show 3 restaurants with highest score.
 
 ## Kevin:
 ### 2020-02-24 
@@ -27,7 +35,6 @@ Restaurant Review Website
       4. Researched how to add comments and score, which we most likely do with patch.
       5. Researched how to add total number of reviews and restaurants. This will be dependent on the content of the API, when we receive it.
 
-      ## Kevin:
  ### 2020-02-25
       1. UPdated more images
       2. Studied Scrapi
