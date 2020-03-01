@@ -8,18 +8,18 @@ Red #A80000 , Cream #F2E2BF , Brown #BA9374 , White #F7F7F7 , Black #000000 */
 body {
     font-family: 'Montserrat', sans-serif;
     color: #A80000;
-    background: #BA9374;
+    background: #F2E2BF;
     margin: 0;
 }
 
 h1,
 h2 {
-    color: #F2E2BF;
+    color: #000000;
     font-family: 'Roboto Slab';
 }
 
 p {
-    color: #F7F7F7;
+    color: #000000;
     font-family: 'Montserrat';
     font-size: 17px;
 }
@@ -34,17 +34,17 @@ a {
 }
 
 a:hover {
-    color: #F7F7F7;
+    color: #000000;
     transition: ease-in .2s;
 }
 
 button {
-    padding: 2em;
-    background-color: #A80000;
+    padding: 1em;
+    background-color: #BA9374;
     font-family: 'Roboto Slab';
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 400;
-    color: #F2E2BF;
+    color: #000000;
     border: none;
 }
 
@@ -53,7 +53,7 @@ button:focus {
 }
 
 button:hover {
-    color: #000000;
+    color: #F7F7F7;
     transition: ease-in .2s;
 }
 
@@ -70,8 +70,13 @@ ul {
     grid-template-areas: 
     "nav-bar" 
     "home" 
-    "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
-    grid-template-rows: .05fr .25fr .15fr .05fr .25fr .5fr .5fr .15fr;
+    "home-cards" 
+    "totals" 
+    "all-restaurants" 
+    "current-restaurant" 
+    "reviews" 
+    "site-info";
+    grid-template-rows: .05fr .15fr .15fr .05fr .25fr .25fr .5fr .15fr;
     grid-template-columns: 1fr;
 }
 
@@ -90,14 +95,32 @@ ul {
     margin-right: 1em;
 }
 
+.client-tools input {
+    margin-top: 2em;
+    height: 2em;
+    width: 170px;
+    border: none;
+}
+
+.client-tools input[type="text"] {
+    font-size: 17.5px;
+}
+
 .client-tools button {
-    padding: 5px;
-    background-color: #A80000;
-    font-size: 13px;
+    padding: 7px;
+    background-color: #BA9374;
+    color: #000000;
+    font-size: 17px;
+}
+
+.client-tools button:hover {
+    color: #F7F7F7;
+    transition: ease-in .2s;
 }
 
 .sign-in {
-    margin-bottom: 2em;
+    line-height: 2em;
+    margin-bottom: 1em;
 }
 
 .home {
@@ -108,11 +131,16 @@ ul {
 
 .home-img {
     filter: brightness(0.7);
+    object-fit: cover;
 }
 
 .home-statement {
     position: absolute;
     top: 15%;
+}
+
+.home-statement h1, p {
+    color: #F7F7F7;
 }
 
 .home-cards {
@@ -161,25 +189,47 @@ ul {
 
 .current-restaurant p {
     font-weight: 400;
+    color: #000000;
 }
 
-.attribute-icons {
+/* .attribute-icons {
     display: flex;
     flex-direction: column;
     color: #A80000;
-}
+} */
 
 .reviews {
     grid-area: reviews;
-    display: grid;
     max-width: 100%;
+}
+
+.review1 {
+    border: 1px solid black;
+    height: 250px;
+    margin-bottom: 1em;
+}
+
+.review2 {
+    border: 1px solid yellow;
+    height: 250px;
+    margin-bottom: 1em;
+}
+
+.review3 {
+    border: 1px solid teal;
+    height: 250px;
+    margin-bottom: 1em;
+
 }
 
 .review-images {
     grid-template-areas: 
-    "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
-    grid-template-rows: 1fr .5fr;
-    grid-template-columns: .35fr .33fr .35fr;
+    "main-img" 
+    "thumb-img1"
+    "thumb-img2"
+    "thumb-img3";
+    grid-template-rows: 1fr .5fr .5fr .5fr;
+    grid-template-columns: 1fr;
     grid-gap: .25em;
 }
 
@@ -203,6 +253,7 @@ ul {
 .promo2 {
     display: flex;
     justify-content: center;
+    margin-bottom: .5em;
 }
 
 footer {
@@ -254,6 +305,11 @@ footer a {
         text-align: center;
         align-items: center;
     }
+
+    .client-tools input {
+        margin-bottom: 1em;
+        width: 380px;
+    }
     
     .sign-in {
         margin-left: 2em;
@@ -268,6 +324,13 @@ footer a {
         grid-area: home;
         text-align: center;
         width: 100%;
+        height: 1em;
+    }
+
+    .home img {
+        width: 100vw;
+        height: 500px;
+        object-fit: cover;
     }
     
     .home h1 {
@@ -291,26 +354,30 @@ footer a {
         justify-content: space-around;
         max-height: 85%;
     }
+    
+    .home-cards h2 {
+        color: #F7F7F7;
+    }
 
     .top-restaurants {
-        border: 5px solid #F2E2BF;
+        border: 5px solid #000000;
         width: 18em;
         position: relative;
-        margin-top: -20%;
+        margin-top: -15%;
     }
 
     .latest-reviews {
-        border: 5px solid #F2E2BF;
+        border: 5px solid #000000;
         width: 20em;
         position: relative;
-        margin-top: -20%;
+        margin-top: -15%;
     }
 
     .weather {
-        border: 5px solid #F2E2BF;
+        border: 5px solid #000000;
         width: 18em;
         position: relative;
-        margin-top: -20%;
+        margin-top: -15%;
     }
 
     .totals {
@@ -354,7 +421,6 @@ footer a {
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
         grid-area: review-images;
-        border: 1px solid blue;
         margin: 0 4% 12% 5%;
     }
 
@@ -372,7 +438,6 @@ footer a {
 
     .promo2 {
         grid-area: advert;
-        border: 3px solid pink;
         width: 30%;
         height: 90%;
         margin: 0 10% 5% 20%;
@@ -380,18 +445,31 @@ footer a {
 
     .main-img {
         grid-area: main-img;
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
     }
+
 
     .thumb-img1 {
         grid-area: thumb-img1;
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
     }
 
     .thumb-img2 {
         grid-area: thumb-img2;
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
     }
 
     .thumb-img3 {
         grid-area: thumb-img3;
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
     }
 
     .site-info {

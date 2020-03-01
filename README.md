@@ -62,6 +62,9 @@ Restaurant Review Website
 ### 2020-02-27
       1.Created async functions to show total restaurants and reviews
       2.Inserted promise results into DOM
-
+### 2020-02-28
+      1.Created function to pull reviews based on recent updates
+      2.Began Re-structuring layout for optimization
+      3.Adjusting site brand colors for accessibility
 
 
