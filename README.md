@@ -1,5 +1,5 @@
 # Project-3
-Restaurant Reviews Website
+Restaurant Reviews Website  
 This website acts as a conduit for reading and posting reviews, ratings, and atrributes of your favourite restaurants.
 
 ## Week 2 Timeline
