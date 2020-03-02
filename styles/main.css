@@ -152,6 +152,12 @@ ul {
     justify-content: space-evenly;
 }
 
+.home-cards span, .latest-reviews-content div{
+    background: rgb(207, 202, 191);
+    padding: 1em;
+    margin: 0 10%;
+}
+
 .totals {
     grid-area: totals;
     display: flex;
