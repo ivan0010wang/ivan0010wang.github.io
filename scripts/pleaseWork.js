@@ -1,4 +1,4 @@
-/*
+/**
  * Fetch information of restaurants
  */
 async function getRestaurantsInfo() {
@@ -8,10 +8,16 @@ async function getRestaurantsInfo() {
     var restaurantInfo = await response.json();
     return restaurantInfo;
 }
-var restaurantInfo = getRestaurantsInfo();
+const restaurantInfo = getRestaurantsInfo();
+getRestaurantsInfo().then(info => {
+    show3RestaurantsWithHighestScore(info);
+    makeButtonsForEachRestaurant(info);
+    showRestaurantInfoAnd3Reviews(info);
+})
 // End
 
-/*
+
+/**
  * Fetch reviews of restaurants
  */
 async function getRestaurantsReviews() {
@@ -21,7 +27,26 @@ async function getRestaurantsReviews() {
     var restaurantReviews = await response.json();
     return restaurantReviews;
 }
-var restaurantReviews = getRestaurantsReviews();
+const restaurantReviews = getRestaurantsReviews();
+getRestaurantsReviews().then(reviews => {
+    showLatest3Reviews(reviews);
+})
+//End
+
+
+/**
+ * Post user comments
+ */
+// fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
+//     method: "POST",
+//     body: JSON.stringify({
+//         name: document.getElementById("name").value,
+//         review: document.getElementById("review").value,
+//         rating: document.getElementById("rating").value,
+//         idrestaurant: "G0D0WN"/* This is the hard part, how to get the idnumber
+//                                  based on the restaurant customer is commenting under. */,
+//     })
+// })
 //End
 
 
@@ -29,15 +54,14 @@ var restaurantReviews = getRestaurantsReviews();
  * A function to avoid repeating code when creating new nodes
  * 
  * @param {*} newElement is the new HTML tag you want to create
- * @param {*} text1 is the first part of the text node
- * @param {*} text2 is the second part of the text node, if not needed, just say ''
+ * @param {*} text is the text node
  * @param {*} targetID is the id in html where the node will be placed
  * @param {*} attribute in case you need to set attribute, write your attribute here
  * @param {*} value set the value of your attribute here
  */
-function writeOnWebPage(newElement, text1, text2, targetID, attribute, value) {
+function writeOnWebPage(newElement, text, targetID, attribute, value) {
     var newTag = document.createElement(newElement);
-    var textNode = document.createTextNode(text1 + text2);
+    var textNode = document.createTextNode(text);
     newTag.appendChild(textNode);
     newTag.setAttribute(attribute, value)
     var list = document.getElementById(targetID);
@@ -60,20 +84,22 @@ function giveMeABreak(targetID) {
 /*
  * Show the names of the restaurants as buttons with dynamic id
  */
-restaurantInfo.then(info => {
-    for (var i = 0; i < info.length; i++) {
+function makeButtonsForEachRestaurant(restaurantInfo){
+    for (var i = 0; i < restaurantInfo.length; i++) {
         var newTag = document.createElement("button");
-        var textnode = document.createTextNode(info[i].name);
+        var textnode = document.createTextNode(restaurantInfo[i].name);
         newTag.appendChild(textnode);
         newTag.setAttribute("id", "restaurantButton" + i);
         var list = document.getElementById("restaurant-list");
         list.insertBefore(newTag, list.childNodes[0]);
     }
-});
+};
 // End
+
 
 /**
  * Calculate the average score of a given restaurant
+ * @param {*} restaurantID the id of restaurant
  */
 async function calculateAverageScore(restaurantID) {
     var restaurantReview = await getRestaurantsReviews();
@@ -94,68 +120,88 @@ async function calculateAverageScore(restaurantID) {
 }
 //End
 
+
 /**
- * When a restaurant name is clicked, the restaurant info
- * should show up in the restaurant detail section
+ * When a restaurant name is clicked:
+ *     1. the restaurant info should show up in the restaurant detail section;
+ *     2. the lastedt 3 reviews should show up in the restaurant review section.
  */
-restaurantInfo.then(info => {
-    for (let i = 0; i < info.length; i++) {
+function showRestaurantInfoAnd3Reviews (restaurantInfo){
+    for (let i = 0; i < restaurantInfo.length; i++) {
         const targetButton = document.getElementById("restaurantButton" + i);
-        const name = info[i].name;
-        const type = info[i].type;
-        const dining = info[i].dining;
-        const description = info[i].description;
-        const website = info[i].url;
-        const restaurantID = info[i].idnumber;
+        const name = restaurantInfo[i].name;
+        const type = restaurantInfo[i].type;
+        const dining = restaurantInfo[i].dining;
+        const description = restaurantInfo[i].description;
+        const website = restaurantInfo[i].url;
+        const restaurantID = restaurantInfo[i].idnumber;
+        // show restaurant info in the restaurant detail section
         calculateAverageScore(restaurantID).then(score => {
             targetButton.addEventListener("click", () => {
                 document.getElementById('restaurant-details').innerHTML='';
-                writeOnWebPage("h1", '' , name, "restaurant-details");
-                writeOnWebPage("span", "Cuisine: ", type, "restaurant-details");
-                writeOnWebPage("span", "Dining: ", dining, "restaurant-details");
-                writeOnWebPage("span", "Score: ", score, "restaurant-details");
-                writeOnWebPage("a", "Website: ", website, "restaurant-details", 'href', website);
-                writeOnWebPage("p", "", description, "restaurant-details");
+                writeOnWebPage("h1", name, "restaurant-details");
+                writeOnWebPage("span", "Cuisine: " + type, "restaurant-details");
+                writeOnWebPage("span", "Dining: " + dining, "restaurant-details");
+                writeOnWebPage("span", "Score: " + score, "restaurant-details");
+                writeOnWebPage("a", "Website: " + website, "restaurant-details", 'href', website);
+                writeOnWebPage("p", description, "restaurant-details");
             })
         });
+        // show lastest 3 reviews in the restaurant review section
+        const reviewsOfThisRestaurant = [];
+        restaurantReviews.then(reviews =>{
+            for (let i = 0; i < reviews.length; i++){
+                if (reviews[i].idrestaurant === restaurantID){
+                    reviewsOfThisRestaurant.push(reviews[i].review);
+                }
+            }
+            targetButton.addEventListener("click", () => {
+                document.getElementById('review1').innerHTML='';
+                writeOnWebPage("p", reviewsOfThisRestaurant[0], "review1");
+                document.getElementById('review2').innerHTML='';
+                writeOnWebPage("p", reviewsOfThisRestaurant[1], "review2");
+                document.getElementById('review3').innerHTML='';
+                writeOnWebPage("p", reviewsOfThisRestaurant[2], "review3");
+            })
+        })
     }
-});
+};
 // End
 
 
 /**
  * Compare the average score of all restaurants and list the top 3
  */
-restaurantInfo.then(info => {
+function show3RestaurantsWithHighestScore(restaurantInfo) {
     const allAverageScores = new Array();
-    for (let i = 0; i < info.length; i++) {
-        const restaurantName = info[i].name;
-        const restaurantID = info[i].idnumber;
+    for (let i = 0; i < restaurantInfo.length; i++) {
+        const restaurantName = restaurantInfo[i].name;
+        const restaurantID = restaurantInfo[i].idnumber;
         calculateAverageScore(restaurantID).then(score => {
             const restaurantObject = {'name':restaurantName, 'score': score}
             allAverageScores.push(restaurantObject);
             var newArraySortedByScore = allAverageScores.sort((a,b) => {return b.score - a.score});
             // Reason for this IF statement:
             // 1. get rid of console error; 
-            // 2. avoid having info jumping around while the FOR loop runs.
-            if (i == info.length - 1) {
+            // 2. avoid having letters flashing while the FOR loop runs.
+            if (i == restaurantInfo.length - 1) {
                 document.getElementById("top-restaurants").innerHTML='';
-                writeOnWebPage("span", 'No.1 ' + newArraySortedByScore[0].name, ': ' + newArraySortedByScore[0].score + '/5.0', "top-restaurants");
+                writeOnWebPage("span", 'No.1 ' + newArraySortedByScore[0].name + ': ' + newArraySortedByScore[0].score + '/5.0', "top-restaurants");
                 giveMeABreak("top-restaurants");
-                writeOnWebPage("span", 'No.2 ' + newArraySortedByScore[1].name, ': ' + newArraySortedByScore[1].score + '/5.0', "top-restaurants");
+                writeOnWebPage("span", 'No.2 ' + newArraySortedByScore[1].name + ': ' + newArraySortedByScore[1].score + '/5.0', "top-restaurants");
                 giveMeABreak("top-restaurants");
-                writeOnWebPage("span", 'No.3 ' + newArraySortedByScore[2].name, ': ' + newArraySortedByScore[2].score + '/5.0', "top-restaurants");
+                writeOnWebPage("span", 'No.3 ' + newArraySortedByScore[2].name + ': ' + newArraySortedByScore[2].score + '/5.0', "top-restaurants");
             }
         })
     }
-});
+};
 // End
 
 
 /**
  * Compare the post date of all reviews and list the top 3
  */
-restaurantReviews.then(reviews => {
+function showLatest3Reviews(reviews) {
     for (let i = 0; i < reviews.length; i++) {
         var reviewsSortedByDate = reviews.sort((a,b) => {
             var a = new Date(a.created_at);
@@ -186,16 +232,15 @@ restaurantReviews.then(reviews => {
                     }
                 })
                 document.getElementById("latest-reviews-content").innerHTML='';
-                writeOnWebPage("div", reviewer1 + " wrote a review for " + restaurant1.name + ": ", reviewsSortedByDate[0].review, "latest-reviews-content");
+                writeOnWebPage("div", reviewer1 + " wrote a review for " + restaurant1.name + ": " + reviewsSortedByDate[0].review, "latest-reviews-content");
                 giveMeABreak("latest-reviews-content");
-                writeOnWebPage("div", reviewer2 + " wrote a review for " + restaurant2.name + ": ", reviewsSortedByDate[1].review, "latest-reviews-content");
+                writeOnWebPage("div", reviewer2 + " wrote a review for " + restaurant2.name + ": " + reviewsSortedByDate[1].review, "latest-reviews-content");
                 giveMeABreak("latest-reviews-content");
-                writeOnWebPage("div", reviewer3 + " wrote a review for " + restaurant3.name + ": ", reviewsSortedByDate[2].review, "latest-reviews-content");
+                writeOnWebPage("div", reviewer3 + " wrote a review for " + restaurant3.name + ": " + reviewsSortedByDate[2].review, "latest-reviews-content");
             })
         }
     }
-})
-// End
+}
 
 
 /**
