@@ -50,6 +50,24 @@ Restaurant Review Website
       2. Started working on Combining scores for
       overall average
 
+ ### 2020-02-28
+      1. FInished combining scores with Ivans help
+
+ ### 2020-02-29
+      1. Fixed the footer
+      
+ ### 2020-03-01
+     1. Finished Forms
+
+
+### Most Proudest
+     Getting Picture replace working with JavaScript
+
+### Least Proudest
+      Not getting Promises and code. It is really disheartening.  
+      
+
+
 ## Jordan:
 ### 2020-02-24 
       1. Built initial structure of HTML
