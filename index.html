@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400|Roboto+Slab&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
-    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <link rel="stylesheet" href="reset.css">
     <title>Restaurant Reviews</title>
 </head>
 
@@ -23,15 +23,15 @@
                 rating /5
                 </form> -->
             <div class="nav-bar">
-                <div class="logo-container"><img src="/images/restaurant-reviews-neg-logo.svg"
-                        alt="Restaurant Reviews Logo" height="100" width="100"></div>
+                <div class="logo-container"><img src="/images/restaurant-reviews.svg" alt="Restaurant Reviews Logo" height="125" width="125"></div>
                 <div class="client-tools">
-                    <div class="search">
-                        <input type="text"><button>Search</button>
-                    </div>
-                    <div class="sign-in">
-                        <a href="">Sign-In/Register</a>
-                    </div>
+                <div class="search">
+                    <input type="text" placeholder="&#x1F50E;"><button>Search</button>
+                </div>
+                <div class="sign-in">
+                    <a href="">Sign-In</a> <br> <a href="">Register</a>
+                </div>
+
                 </div>
             </div>
         </header>
@@ -39,8 +39,7 @@
             <img class="home-img" src="./images/resized-and-compressed.jpg" alt="Juicy Chesseburger">
             <div class="home-statement">
                 <h1>Restaurant Reviews</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut dicta eveniet, corporis eligendi labore
-                    sapiente temporibus nam tempore distinctio aliquam maxime nobis id facilis voluptatem!</p>
+                <p>Welcome to Restaurant Reviews! The best site to find, review, and rate restaurants on the whole internet. </p>
                 <button class="best-rest">Best Restaurant</button>
                 <button class="add-review">Add A Review</button>
             </div>
@@ -63,18 +62,23 @@
             <span class="total-reviews" id="totalReviews"><br>Reviews</span>
         </div>
         <div class="all-restaurants">
-            <div class="promo1"><iframe src="https://via.placeholder.com/475x150" width="475"></iframe></div>
-            <ul id="restaurant-list" class="restaurant-list"></ul>
+            <div class="promo1"><iframe src="https://via.placeholder.com/300x150" width="300"></iframe></div>
+            <ul id="restaurantNames" class="restaurant-list">
+                <li class="restaurant"></li>
+            </ul>
         </div>
         <div id="restaurant-details" class="current-restaurant">
             <div class="restaurant-attributes">
                 <h1>Click on a restaurant to see details</h1>
+            </div>
+            <div class="restaurant-grade"></div>
             </div>
         </div>
         <div class="reviews">
             <div class="review1"></div>
             <div class="review2"></div>
             <div class="review3"></div>
+            <div class="promo2"><iframe src="https://via.placeholder.com/300x300" width="300" height="300"></iframe></div>
             <div class="review-images">
                 <div class="main-img">
                     <img id="id1" src="/images/lily-banse--YHSwy6uqvk-unsplash-resized.jpg" alt="">
@@ -89,7 +93,6 @@
                     <img id="id4" onclick="changeImage3()" src="images/brooke-lark-oaz0raysASk-unsplash-resized.jpg" alt="">
                 </div>
             </div>
-            <div class="promo2"><iframe src="https://via.placeholder.com/250x400" width="250" height="400"></iframe></div>
         </div>
         <footer class="site-info">
             <div class="logo-footer">
