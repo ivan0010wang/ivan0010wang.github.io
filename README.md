@@ -71,6 +71,9 @@ This website acts as a conduit for reading and posting reviews, ratings, and atr
 ### 2020-02-29
       1. wrote the function to properly display score when a restaurant is clicked;
       2. wrote the function to show 3 restaurants with highest score.
+### Most/Least Proud Moments
+      Most: Putting pieces of code together can make some of the functions work!
+      Least: Having errors in my console and could not figure out why...
 
 ## Kevin:
 ### 2020-02-24 
@@ -94,6 +97,24 @@ This website acts as a conduit for reading and posting reviews, ratings, and atr
       1. Finished picture switching functionality
       2. Started working on Combining scores for
       overall average
+
+ ### 2020-02-28
+      1. FInished combining scores with Ivans help
+
+ ### 2020-02-29
+      1. Fixed the footer
+      
+ ### 2020-03-01
+     1. Finished Forms
+
+
+### Most Proudest
+     Getting Picture replace working with JavaScript
+
+### Least Proudest
+      Not getting Promises and code. It is really disheartening.  
+      
+
 
 ## Jordan:
 ### 2020-02-24 
