@@ -37,14 +37,15 @@ function changeImage3() {
  * The names of the restaurants should be buttons with dynamic id
  */
 restaurantInfo.then(info => {
-  for (var i = 0; i < info.length; i++) {
-    var newTag = document.createElement("button");
-    var textnode = document.createTextNode(info[i].name);
-    newTag.appendChild(textnode);
-    newTag.setAttribute("id", "restaurantButton" + i);
-    var list = document.getElementById("restaurantNames");
-    list.insertBefore(newTag, list.childNodes[0]);
-  }
+    for (var i = 0; i < info.length; i++) {
+        var newTag = document.createElement("li");
+        var textnode = document.createTextNode(info[i].name);
+        newTag.appendChild(textnode);
+        newTag.setAttribute("id", "restaurantButton" + i);
+        var list = document.getElementById("restaurantNames");
+        list.insertAfter(newTag, list.childNodes[0]);
+    }
+
 });
 // End
 
@@ -179,15 +180,6 @@ getLatestReviews = async() => {
     };
 }
 getLatestReviews()
-
-// const latestReviews = getLatestReviews();
-// latestReviews.then(a => {
-//   var newTag = document.createElement("span");
-//   var textnode = document.createTextNode(a);
-//   newTag.appendChild(textnode);
-//   let target = document.getElementById("latestReviews");
-//   target.insertBefore(newTag, target.childNodes[0]);
-// });
 
 //Array of Id's
 restaurantIds = async() => {
