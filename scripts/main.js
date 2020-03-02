@@ -69,6 +69,9 @@ function changeImage3() {
   document.getElementById("id1").src =
     "/images/brooke-lark-oaz0raysASk-unsplash-resized.jpg";
 }
+
+
+
 //End
 
 /**
@@ -234,15 +237,15 @@ getTotalReviews();
 // });
 
 //Sort Reviews by Date
-getLatestReviews = async () => {
-  const response = await fetch(
-    "http://red-strapi-postgres-heroku.herokuapp.com/Reviews"
-  );
-  const reviews = await response.json();
-  for (let i = 0; i < reviews.length; i++) {
-    let reviewArray = reviews[i].updated_at;
-    return reviewArray;
-  };
+getLatestReviews = async() => {
+    const response = await fetch(
+        "http://red-strapi-postgres-heroku.herokuapp.com/Reviews"
+    );
+    const reviews = await response.json();
+    for (let i = 0; i < reviews.length; i++) {
+        let reviewArray = reviews[i].updated_at;
+        return reviewArray;
+    };
 }
 getLatestReviews()
 
