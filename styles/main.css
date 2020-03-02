@@ -67,6 +67,7 @@ ul {
 
 .page-container {
     display: grid;
+
     grid-template-areas: 
     "nav-bar" 
     "home" 
@@ -202,7 +203,22 @@ ul {
 
 }
 
+form {
+    margin: 2em;
+    color: black;
+    line-height: 2em;
+}
+
+input {
+    width: 70%;
+}
+
+textarea {
+    width: 70%;
+}
+
 /* .attribute-icons {
+
     display: flex;
     margin-top: 3em;
     color: #A80000;
@@ -465,8 +481,10 @@ footer a {
         overflow: hidden;
     }
     footer {
+        max-width: 100%;
         max-height: 60%;
         margin: 0 5em;
+        font-size: 1.2em;
     }
     .site-info {
         grid-area: site-info;
