@@ -67,6 +67,7 @@ ul {
 
 .page-container {
     display: grid;
+
     grid-template-areas: 
     "nav-bar" 
     "home" 
@@ -152,6 +153,12 @@ ul {
     justify-content: space-evenly;
 }
 
+.home-cards span, .latest-reviews-content div{
+    background: rgb(207, 202, 191);
+    padding: 1em;
+    margin: 0 10%;
+}
+
 .totals {
     grid-area: totals;
     display: flex;
@@ -192,15 +199,22 @@ ul {
 .current-restaurant p {
     font-weight: 400;
     color: #000000;
+    margin: 0 3em;
+
 }
 
-.attribute-icons {
-    display: flex;
-    margin-top: 3em;
-    color: #A80000;
-    justify-content: space-around;
-    max-width: 40%;
-    margin-left: 30%;
+form {
+    margin: 2em;
+    color: black;
+    line-height: 2em;
+}
+
+input {
+    width: 70%;
+}
+
+textarea {
+    width: 70%;
 }
 
 .reviews {
@@ -323,9 +337,11 @@ footer a {
         margin-left: 2em;
         margin-top: 2em;
     }
+  
     input {
         width: 15em;
     }
+  
     .home {
         grid-area: home;
         text-align: center;
@@ -338,12 +354,15 @@ footer a {
         height: 700px;
         object-fit: cover;
     }
+  
     .home h1 {
         font-size: 6em;
     }
+  
     .home p {
         font-size: 2em;
     }
+  
     .home-statement {
         margin-left: 10em;
         margin-right: 10em;
@@ -468,9 +487,11 @@ footer a {
         overflow: hidden;
     }
     footer {
+        max-width: 100%;
         max-height: 60%;
         max-width: 100%;
         margin: 0 5em;
+        font-size: 1.2em;
     }
     footer a:hover {
         color: #F7F7F7;

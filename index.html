@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400|Roboto+Slab&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400|Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="reset.css">
     <title>Restaurant Reviews</title>
@@ -15,22 +14,16 @@
 <body>
     <div class="page-container">
         <header>
-            <!-- <form>
-                id
-                name
-                restaurant name
-                review
-                rating /5
-                </form> -->
+
             <div class="nav-bar">
                 <div class="logo-container"><img src="/images/restaurant-reviews.svg" alt="Restaurant Reviews Logo" height="125" width="125"></div>
                 <div class="client-tools">
-                <div class="search">
+                    <div class="search">
                     <input type="text" placeholder="&#x1F50E;"><button>Search</button>
                 </div>
-                <div class="sign-in">
+                    <div class="sign-in">
                     <a href="">Sign-In</a> <br> <a href="">Register</a>
-                </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -50,36 +43,43 @@
             </div>
             <div class="latest-reviews">
                 <h2>Our Latest Reviews</h2>
+                <div id="latest-reviews-content" class="latest-reviews-content" ></div>
             </div>
             <div class="weather">
                 <h2>Your Local Weather</h2>
+
             </div>
+
         </div>
         <div class="totals">
             <span class="total-restaurants" id="totalRestaurants"><br>Restaurants</span>
             <span class="total-reviews" id="totalReviews"><br>Reviews</span>
         </div>
         <div class="all-restaurants">
-            <div class="promo1"><iframe src="https://via.placeholder.com/300x150" width="300"></iframe></div>
+            <div class="promo1"><iframe src="https://via.placeholder.com/475x150" width="475"></iframe></div>
+            <ul id="restaurant-list" class="restaurant-list"></ul>
+            <form action="" class="enter-review">
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="restaurant">Restaurant</label><br>
+                <input type="text" id="restaurant" name="restaurant"><br>
+                <label for="ID">ID</label><br>
+                <input type="text" id="ID" name="ID"><br>
+                <label for="rating">Rating</label><br>
+                <input type="number" id="rating" name="rating" min="1" max="5"><br>
+                <label for="Review">Review</label><br>
+                <textarea id="review" rows="10" cols="50"></textarea><br>
+            </form>
             <ul id="restaurantNames" class="restaurant-list">
                 <li class="restaurant"></li>
             </ul>
         </div>
-        <div class="current-restaurant">
-            <div id="details" class="restaurant-attributes">
-                <h1>Restaurant Name</h1>
-                <p>Restaurant Details</p>
+        <div id="restaurant-details" class="current-restaurant">
+            <div class="restaurant-attributes">
+                <h1>Click on a restaurant to see details</h1>
             </div>
-            <!-- <div class="attribute-icons">
-                <i class="fa fa-dollar"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-leaf"></i>
-                <i class="fa fa-child"></i>
-                <i class="fa fa-wheelchair"></i>
-            </div> -->
             <div class="restaurant-grade"></div>
+            </div>
         </div>
         <div class="reviews">
             <div class="review1"></div>
@@ -122,8 +122,8 @@
                 <div class="project-about"></div>
             </div>
             <span class="copyright">
-                 &#169; Copyright WD 2020 Q1
-                All rights reserved </span>
+                &#169; Copyright WD 2020 Q1
+            All rights reserved </span>
 
             <div class="dev-names">
                 <a href="https://github.com/gadgetcrawford">Kevin  </a>
