@@ -73,5 +73,8 @@ Restaurant Review Website
       1.Created function to pull reviews based on recent updates
       2.Began Re-structuring layout for optimization
       3.Adjusting site brand colors for accessibility
+## Highs/Lows
 
+      Most Proud: Getting live information from API on to the page
 
+      Least Proud: Overall lack of contribution to JS files both timewise and knowledgewise
