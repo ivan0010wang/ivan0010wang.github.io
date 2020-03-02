@@ -185,18 +185,23 @@ ul {
 .current-restaurant {
     grid-area: current-restaurant;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .current-restaurant p {
     font-weight: 400;
     color: #000000;
+    margin: 0 3em;
+
 }
 
 /* .attribute-icons {
     display: flex;
-    flex-direction: column;
+    margin-top: 3em;
     color: #A80000;
 } */
+
 
 .reviews {
     grid-area: reviews;
@@ -275,21 +280,17 @@ footer a {
     color: #BA9374;
 }
 
-@media only screen and (min-width: 930px) {
+.dev-names {
+    margin-top: 1.5em;
+}
 
-    
+@media only screen and (min-width: 930px) {
     button {
         font-size: 1em;
     }
-    
     .page-container {
         display: grid;
-        grid-template-areas: "nav-bar" 
-        "home" 
-        "home-cards" 
-        "totals" 
-        "all-restaurants" "current-restaurant" "reviews" 
-        "site-info";
+        grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
         grid-template-rows: .05fr 1fr .5fr .15fr .5fr .5fr 1fr .35fr;
         grid-template-columns: 1fr;
     }
@@ -298,7 +299,6 @@ footer a {
         display: flex;
         justify-content: space-between;
     }
-    
     .client-tools {
         display: flex;
         flex-direction: row;
@@ -310,16 +310,16 @@ footer a {
         margin-bottom: 1em;
         width: 380px;
     }
-    
+
     .sign-in {
         margin-left: 2em;
         margin-top: 2em;
     }
-    
+  
     input {
         width: 15em;
     }
-    
+  
     .home {
         grid-area: home;
         text-align: center;
@@ -332,21 +332,20 @@ footer a {
         height: 500px;
         object-fit: cover;
     }
-    
+  
     .home h1 {
         font-size: 6em;
     }
-
+  
     .home p {
         font-size: 2em;
     }
-
+  
     .home-statement {
         margin-left: 10em;
         margin-right: 10em;
         margin-top: 2em;
     }
-
     .home-cards {
         grid-area: home-cards;
         display: flex;
@@ -365,40 +364,37 @@ footer a {
         position: relative;
         margin-top: -15%;
     }
-
     .latest-reviews {
         border: 5px solid #000000;
         width: 20em;
         position: relative;
         margin-top: -15%;
     }
-
     .weather {
         border: 5px solid #000000;
         width: 18em;
         position: relative;
         margin-top: -15%;
     }
-
     .totals {
         grid-area: totals;
         display: flex;
         justify-content: space-around;
     }
-
     .all-restaurants {
         grid-area: all-restaurants;
     }
-
     .current-restaurant {
         grid-area: current-restaurant;
     }
-
     .attribute-icons {
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column; */
+        margin-top: 3em;
+        justify-content: space-around;
+        max-width: 40%;
+        margin-left: 30%;
     }
-
     .reviews {
         grid-area: reviews;
         display: grid;
@@ -408,13 +404,11 @@ footer a {
         grid-template-columns: .4fr .65fr;
         grid-gap: 1em;
     }
-
     .review1 {
         grid-area: review1;
         margin: 2em;
         border: 1px solid black;
     }
-
     .review-images {
         display: grid;
         grid-template-areas: "main-img main-img main-img" "thumb-img1 thumb-img2 thumb-img3";
@@ -423,26 +417,22 @@ footer a {
         grid-area: review-images;
         margin: 0 4% 12% 5%;
     }
-
     .review2 {
         grid-area: review2;
         border: 1px solid yellow;
         margin: 2em;
     }
-
     .review3 {
         grid-area: review3;
         margin: 2em;
         border: 1px solid teal;
     }
-
     .promo2 {
         grid-area: advert;
         width: 30%;
         height: 90%;
         margin: 0 10% 5% 20%;
     }
-
     .main-img {
         grid-area: main-img;
         min-width: 0;
@@ -450,29 +440,76 @@ footer a {
         overflow: hidden;
     }
 
-
     .thumb-img1 {
         grid-area: thumb-img1;
         min-width: 0;
         min-height: 0;
         overflow: hidden;
     }
-
     .thumb-img2 {
         grid-area: thumb-img2;
         min-width: 0;
         min-height: 0;
         overflow: hidden;
     }
-
     .thumb-img3 {
         grid-area: thumb-img3;
         min-width: 0;
         min-height: 0;
         overflow: hidden;
     }
-
+    footer {
+        max-height: 60%;
+        margin: 0 5em;
+    }
     .site-info {
         grid-area: site-info;
+        display: grid;
+        grid-template-areas: "logo title . about" "feature . . about" "feature . . ." "copyright names names names";
+        grid-template-rows: 2fr 2fr 2fr 2fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .logo-footer {
+        display: flex;
+        align-content: flex-start;
+        justify-content: space-around;
+        margin-right: auto;
+        margin-bottom: auto;
+        grid-area: logo;
+    }
+    .logo-footer img {
+        margin-left: 8em;
+        margin-top: 2em;
+    }
+    .logo-footer h1 {
+        margin-left: 2em;
+        font-size: 4em;
+        margin-top: 0;
+        grid-area: title;
+    }
+    .about-project {
+        display: flex;
+        margin-left: 20em;
+    }
+    .about-project p {
+        font-size: 2em;
+    }
+    .title-footer {
+        justify-self: flex-start;
+        align-self: start;
+        grid-area: about;
+    }
+    .site-features {
+        grid-area: feature;
+    }
+    .copyright {
+        grid-area: copyright;
+    }
+    .dev-names {
+        grid-area: names;
+        margin-right: 10em;
+    }
+    .dev-names a {
+        font-size: 2em;
     }
 }
