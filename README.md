@@ -4,27 +4,27 @@ This website acts as a conduit for reading and posting reviews, ratings, and atr
 
 ## Week 2 Timeline
 ### Monday: 
-AM: Project Management/OOP Lesson
+AM: Project Management/OOP Lesson  
 PM: Project Work
 ### Tuesday
-AM: OOP Coding Workshop
+AM: OOP Coding Workshop  
 PM: Project Work
 ### Wednesday
 AM: 1/2 way Milestones Completed
 * Fix current bugs (Ivan)
 * Get JS form to work (Kevin)
 * CSS layouts completed incl. MQ (Jordan)
-OOP Coding Workshop
+OOP Coding Workshop  
 PM: Project Work
 ### Thursday
-AM: Ethics & Legals cross-session
+AM: Ethics & Legals cross-session  
 PM: Project Work
 ### Friday
 AM: Project Tasks Completed
 * Page layouts for all Media Queries
 * Can post reviews
 * All current JS Functions completed
-CSS Animation class
+CSS Animation class  
 PM: Project wrap-up
 * Complete README
 * Tidy root directory 
