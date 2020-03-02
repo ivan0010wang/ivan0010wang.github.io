@@ -290,8 +290,16 @@ footer a {
     }
     .page-container {
         display: grid;
-        grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
-        grid-template-rows: .05fr 1fr .5fr .15fr .5fr .5fr 1fr .35fr;
+        grid-template-areas: 
+        "nav-bar" 
+        "home" 
+        "home-cards" 
+        "totals" 
+        "all-restaurants" 
+        "current-restaurant" 
+        "reviews" 
+        "site-info";
+        grid-template-rows: .05fr .80fr .5fr .15fr .5fr .5fr 1fr .35fr;
         grid-template-columns: 1fr;
     }
     .nav-bar {
@@ -327,7 +335,7 @@ footer a {
 
     .home img {
         width: 100vw;
-        height: 500px;
+        height: 700px;
         object-fit: cover;
     }
     .home h1 {
@@ -353,20 +361,26 @@ footer a {
         color: #F7F7F7;
     }
 
+    .home-cards p {
+        font-family: 'Montserrat';
+        font-weight: 800;
+        color: #000000;
+    }
+
     .top-restaurants {
-        border: 5px solid #000000;
+        border: 5px solid #A80000;
         width: 18em;
         position: relative;
         margin-top: -15%;
     }
     .latest-reviews {
-        border: 5px solid #000000;
+        border: 5px solid #A80000;
         width: 20em;
         position: relative;
         margin-top: -15%;
     }
     .weather {
-        border: 5px solid #000000;
+        border: 5px solid #A80000;
         width: 18em;
         position: relative;
         margin-top: -15%;
@@ -455,7 +469,11 @@ footer a {
     }
     footer {
         max-height: 60%;
+        max-width: 100%;
         margin: 0 5em;
+    }
+    footer a:hover {
+        color: #F7F7F7;
     }
     .site-info {
         grid-area: site-info;
@@ -473,18 +491,18 @@ footer a {
         grid-area: logo;
     }
     .logo-footer img {
-        margin-left: 8em;
+        /* margin-left: 8em; */
         margin-top: 2em;
     }
     .logo-footer h1 {
-        margin-left: 2em;
+        /* margin-left: 2em; */
         font-size: 4em;
         margin-top: 0;
         grid-area: title;
     }
     .about-project {
         display: flex;
-        margin-left: 20em;
+        /* margin-left: 20em; */
     }
     .about-project p {
         font-size: 2em;

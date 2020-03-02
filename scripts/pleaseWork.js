@@ -121,9 +121,9 @@ restaurantInfo.then(info => {
             allAverageScores.push(restaurantObject);
             var newArraySortedByScore = allAverageScores.sort((a,b) => {return b.score - a.score});
             document.getElementById("top-restaurants").innerHTML='';
-            writeOnWebPage("p", 'No.1 ' + newArraySortedByScore[0].name, ': ' + newArraySortedByScore[0].score + '/5.0', "top-restaurants", 0);
-            writeOnWebPage("p", 'No.2 ' + newArraySortedByScore[1].name, ': ' + newArraySortedByScore[1].score + '/5.0', "top-restaurants", 1);
-            writeOnWebPage("p", 'No.3 ' + newArraySortedByScore[2].name, ': ' + newArraySortedByScore[2].score + '/5.0', "top-restaurants", 2);
+            writeOnWebPage("p", '1. ' + newArraySortedByScore[0].name, ': ' + newArraySortedByScore[0].score + '/5.0', "top-restaurants", 0);
+            writeOnWebPage("p", '2. ' + newArraySortedByScore[1].name, ': ' + newArraySortedByScore[1].score + '/5.0', "top-restaurants", 1);
+            writeOnWebPage("p", '3. ' + newArraySortedByScore[2].name, ': ' + newArraySortedByScore[2].score + '/5.0', "top-restaurants", 2);
         })
     }
 });
