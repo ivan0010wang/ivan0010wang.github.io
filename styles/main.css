@@ -112,7 +112,6 @@ ul {
 .client-tools button:hover {
     opacity: 1;
     color: #F7F7F7;
-    /* transition: ease-in .2s; */
 }
 
 .sign-in {
@@ -230,7 +229,6 @@ p {
 }
 
 form {
-    /* border: black solid 3px; */
     text-align: center;
     color: black;
     line-height: 2em;
@@ -407,9 +405,6 @@ footer a:hover {
     }
 }
 
-
-}
-
 @media only screen and (min-width: 900px) {
     
     button {
@@ -500,6 +495,11 @@ footer a:hover {
         color: #F7F7F7;
         margin-bottom: 2em;
     }
+
+    .home-cards span,
+    .latest-reviews-content {
+    margin-bottom: 2em;
+    }
     
     .home-cards p {
         font-family: 'Montserrat';
@@ -513,7 +513,7 @@ footer a:hover {
         position: relative;
         margin-top: 5%;
         font-size: 1.5em;
-        line-height: 4em;
+        line-height: 2em;
     }
     
     .latest-reviews {
@@ -522,7 +522,7 @@ footer a:hover {
         position: relative;
         margin-top: 5%;
         font-size: 1.5em;
-        line-height: 4em;
+        line-height: 2em;
     }
     
     .totals {
@@ -639,7 +639,7 @@ footer a:hover {
     
     footer {
         height: 600px;
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     .site-info {
@@ -660,24 +660,14 @@ footer a:hover {
         grid-area: logo;
     }
     
-    .logo-footer img {
-        margin-top: 0 2em;
-    }
-    
     .logo-footer h1 {
         font-size: 4em;
         grid-area: title;
         color: white;
-        padding: 0 2em;
     }
     
     .about-project {
         display: flex;
-        padding: 1em;
-    }
-    
-    .about-project p {
-        font-size: 2em;
     }
     
     .title-footer {
@@ -690,21 +680,15 @@ footer a:hover {
         grid-area: feature;
     }
     
-    .site-features p {
-        font-size: 1.5em;
-    }
-    
     .copyright {
         grid-area: copyright;
     }
     
     .dev-names {
         grid-area: names;
-        margin-right: 10em;
     }
     
     .dev-names a {
-        font-size: 2em;
-        max-width: 100%;
+        font-size: 1.5em;
     }
 }
