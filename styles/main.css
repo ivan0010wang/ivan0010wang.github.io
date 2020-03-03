@@ -7,7 +7,7 @@ Red #A80000 , Cream #F2E2BF , Brown #BA9374 , White #F7F7F7 , Black #000000 */
 
 body {
     font-family: 'Montserrat', sans-serif;
-    color: #A80000;
+    color: rgb(92, 22, 18);
     background: #F2E2BF;
     margin: 0;
 }
@@ -30,22 +30,22 @@ img {
 
 a {
     text-decoration: none;
-    color: #A80000;
+    color: rgb(92, 22, 18);
 }
 
 a:hover {
-    color: #000000;
-    transition: ease-in .2s;
+    opacity: 0.5;
 }
 
 button {
     padding: 1em;
-    background-color: #BA9374;
+    background-color: rgb(92, 22, 18);
     font-family: 'Roboto Slab';
     font-size: 17px;
     font-weight: 400;
-    color: #000000;
+    color: #F7F7F7;
     border: none;
+    opacity: 0.5;
 }
 
 button:focus {
@@ -53,8 +53,7 @@ button:focus {
 }
 
 button:hover {
-    color: #F7F7F7;
-    transition: ease-in .2s;
+    opacity: 1;
 }
 
 input:focus {
@@ -67,8 +66,15 @@ ul {
 
 .page-container {
     display: grid;
-    grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
-    grid-template-rows: .05fr .15fr .15fr .05fr .25fr .25fr .5fr .15fr;
+    grid-template-areas: 
+    "nav-bar" 
+    "home" 
+    "home-cards" 
+    "totals" 
+    "all-restaurants" "current-restaurant" 
+    "reviews" 
+    "site-info";
+    grid-template-rows: .05fr .15fr .15fr .05fr .25fr .15fr .15fr .15fr;
     grid-template-columns: 1fr;
 }
 
@@ -94,20 +100,26 @@ ul {
     border: none;
 }
 
+.client-tools input::placeholder {
+    text-align: right;
+}
+
 .client-tools input[type="text"] {
     font-size: 17.5px;
 }
 
 .client-tools button {
     padding: 7px;
-    background-color: #BA9374;
-    color: #000000;
+    background-color: rgb(92, 22, 18);
+    color: #f7f7f7;
+    opacity: 0.8;
     font-size: 17px;
 }
 
 .client-tools button:hover {
+    opacity: 1;
     color: #F7F7F7;
-    transition: ease-in .2s;
+    /* transition: ease-in .2s; */
 }
 
 .sign-in {
@@ -119,6 +131,14 @@ ul {
     grid-area: home;
     text-align: center;
     position: relative;
+}
+
+.add-review {
+    opacity: 1;
+}
+
+.add-review:hover {
+    opacity: 0.8;
 }
 
 .home-img {
@@ -147,16 +167,19 @@ p {
 
 .home-cards span,
 .latest-reviews-content div {
-    background: rgb(207, 202, 191);
+    background: #F2E2BF;
+    border: 1px solid #000000;
     padding: 1em;
-    margin: 0 10%;
+    line-height: 1em;
+    margin:0;
+    margin-bottom: 1em;
 }
 
 .totals {
     grid-area: totals;
     display: flex;
     justify-content: space-around;
-    background-color: #A80000;
+    background-color: rgb(92, 22, 18);
 }
 
 .totals span {
@@ -172,14 +195,22 @@ p {
 
 .all-restaurants li {
     font-family: 'Montserrat';
-    color: #A80000;
+    color: rgb(92, 22, 18);
     font-weight: 300i;
+}
+
+.all-restaurants button:focus {
+    opacity: 1;
 }
 
 .promo1 {
     margin-top: 5px;
     display: flex;
     justify-content: center;
+}
+
+.restaurant-list {
+    max-width: 100%;
 }
 
 .current-restaurant {
@@ -217,26 +248,37 @@ textarea {
 .review1 {
     border: 1px solid black;
     height: 250px;
+    margin: 0;
     margin-bottom: 1em;
 }
 
 .review2 {
-    border: 1px solid yellow;
+    border: 1px solid black;
     height: 250px;
+    margin: 0;
     margin-bottom: 1em;
 }
 
 .review3 {
-    border: 1px solid teal;
+    border: 1px solid black;
     height: 250px;
+    margin: 0;
     margin-bottom: 1em;
 }
 
 .review-images {
-    grid-template-areas: "main-img" "thumb-img1" "thumb-img2" "thumb-img3";
-    grid-template-rows: 1fr .5fr .5fr .5fr;
-    grid-template-columns: 1fr;
-    grid-gap: .25em;
+    display: grid;
+    grid-template-areas: 
+    "main-img main-img main-img" 
+    "thumb-img1 thumb-img2 thumb-img3";
+    grid-template-rows: 1fr .5fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow: hidden;
+}
+
+.review-images img {
+    overflow: hidden;
+
 }
 
 .main-img {
@@ -269,6 +311,7 @@ footer {
     text-align: center;
     max-height: 100%;
     max-width: 100%;
+    padding: 2em;
 }
 
 .site-info {
