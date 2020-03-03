@@ -158,6 +158,10 @@ Project wrap-up
       1. Created function to pull reviews based on recent updates
       2. Began Re-structuring layout for optimization
       3. Adjusting site brand colors for accessibility
+### 2020-03-02
+      1. Adjusted button styles
+      2. Adjusted styles for generated information
+      3. Corrected img layout for mobile
 ## Highs/Lows
       Most Proud: Getting live information from API on to the page
       Least Proud: Overall lack of contribution to JS files both timewise and knowledgewise
