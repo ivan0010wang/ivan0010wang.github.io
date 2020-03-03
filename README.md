@@ -82,6 +82,10 @@ Project wrap-up
 ### 2020-02-29
       1. wrote the function to properly display score when a restaurant is clicked;
       2. wrote the function to show 3 restaurants with highest score.
+### 2020-03-02
+      1. Fixed bug for displaying reviews;
+      2. Added a function to show 3 reviews of this restaurant when the name button is clicked;
+      3. Minor refactor in the function showRestaurantInfoAnd3Reviews;
 ### Most/Least Proud Moments
       Most: Putting pieces of code together can make some of the functions work!
       Least: Having errors in my console and could not figure out why...
