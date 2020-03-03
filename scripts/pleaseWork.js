@@ -13,6 +13,8 @@ getRestaurantsInfo().then(info => {
     show3RestaurantsWithHighestScore(info);
     makeButtonsForEachRestaurant(info);
     showRestaurantInfoAnd3Reviews(info);
+    changeStyleForActiveButton();
+    showTotalRestaurants(info);
 })
 // End
 
@@ -30,23 +32,44 @@ async function getRestaurantsReviews() {
 const restaurantReviews = getRestaurantsReviews();
 getRestaurantsReviews().then(reviews => {
     showLatest3Reviews(reviews);
+    showTotalReviews(reviews);
 })
 //End
 
 
 /**
+ * Show total number of restaurants in Strapi
+ */
+function showTotalRestaurants(info) {
+    writeOnWebPage("span", " "+info.length, "totalRestaurants")
+}
+// End
+
+
+/**
+ * Show total number of reviews in Strapi
+ */
+function showTotalReviews(reviews) {
+    writeOnWebPage("span", " "+reviews.length, "totalReviews")
+}
+// End
+
+
+/**
  * Post user comments
  */
-// fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
-//     method: "POST",
-//     body: JSON.stringify({
-//         name: document.getElementById("name").value,
-//         review: document.getElementById("review").value,
-//         rating: document.getElementById("rating").value,
-//         idrestaurant: "G0D0WN"/* This is the hard part, how to get the idnumber
-//                                  based on the restaurant customer is commenting under. */,
-//     })
-// })
+function submitReview() {
+    fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
+        method: "POST",
+        body: JSON.stringify({
+            name: document.getElementById("name").value,
+            review: document.getElementById("review").value,
+            rating: document.getElementById("rating").value,
+            idrestaurant: "G0D0WN"/* This is the hard part, how to get the idnumber
+                                    based on the restaurant customer is commenting under. */,
+        })
+    })   
+}
 //End
 
 
@@ -90,6 +113,10 @@ function makeButtonsForEachRestaurant(restaurantInfo){
         var textnode = document.createTextNode(restaurantInfo[i].name);
         newTag.appendChild(textnode);
         newTag.setAttribute("id", "restaurantButton" + i);
+        newTag.classList.add("restaurant-button");
+        if (i == restaurantInfo.length -1) {
+            newTag.classList.add("restaurant-button-active");
+        } 
         var list = document.getElementById("restaurant-list");
         list.insertBefore(newTag, list.childNodes[0]);
     }
@@ -124,7 +151,7 @@ async function calculateAverageScore(restaurantID) {
 /**
  * When a restaurant name is clicked:
  *     1. the restaurant info should show up in the restaurant detail section;
- *     2. the lastedt 3 reviews should show up in the restaurant review section.
+ *     2. the lastest 3 reviews should show up in the restaurant review section;
  */
 function showRestaurantInfoAnd3Reviews (restaurantInfo){
     for (let i = 0; i < restaurantInfo.length; i++) {
@@ -152,20 +179,44 @@ function showRestaurantInfoAnd3Reviews (restaurantInfo){
         restaurantReviews.then(reviews =>{
             for (let i = 0; i < reviews.length; i++){
                 if (reviews[i].idrestaurant === restaurantID){
-                    reviewsOfThisRestaurant.push(reviews[i].review);
+                    reviewsOfThisRestaurant.push(
+                        {
+                            "nameOfWritter": reviews[i].name,
+                            "review": reviews[i].review
+                        });
                 }
             }
             targetButton.addEventListener("click", () => {
                 document.getElementById('review1').innerHTML='';
-                writeOnWebPage("p", reviewsOfThisRestaurant[0], "review1");
+                writeOnWebPage("article", reviewsOfThisRestaurant[0].nameOfWritter + ": " + reviewsOfThisRestaurant[0].review, "review1");
                 document.getElementById('review2').innerHTML='';
-                writeOnWebPage("p", reviewsOfThisRestaurant[1], "review2");
+                writeOnWebPage("article", reviewsOfThisRestaurant[1].nameOfWritter + ": " + reviewsOfThisRestaurant[1].review, "review2");
                 document.getElementById('review3').innerHTML='';
-                writeOnWebPage("p", reviewsOfThisRestaurant[2], "review3");
+                writeOnWebPage("article", reviewsOfThisRestaurant[2].nameOfWritter + ": " + reviewsOfThisRestaurant[2].review, "review3");
             })
         })
     }
 };
+// End
+
+
+/**     
+ * When user clicks a button, this button should change style until another button is clicked.
+ */
+function changeStyleForActiveButton() {
+    var buttonContainer = document.getElementById("restaurant-list");
+    var buttons = buttonContainer.getElementsByClassName("restaurant-button");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function() {
+            var currentButton = document.getElementsByClassName("restaurant-button-active");
+            console.log(currentButton)
+            console.log(currentButton[0])
+            currentButton[0].className = currentButton[0].className.replace("restaurant-button-active", "");
+            // Add the active class to the current/clicked button
+            this.classList.add("restaurant-button-active");
+        });
+    }
+}
 // End
 
 
@@ -232,11 +283,11 @@ function showLatest3Reviews(reviews) {
                     }
                 })
                 document.getElementById("latest-reviews-content").innerHTML='';
-                writeOnWebPage("div", reviewer1 + " wrote a review for " + restaurant1.name + ": " + reviewsSortedByDate[0].review, "latest-reviews-content");
+                writeOnWebPage("article", reviewer1 + " wrote a review for " + restaurant1.name + ": " + reviewsSortedByDate[0].review, "latest-reviews-content");
                 giveMeABreak("latest-reviews-content");
-                writeOnWebPage("div", reviewer2 + " wrote a review for " + restaurant2.name + ": " + reviewsSortedByDate[1].review, "latest-reviews-content");
+                writeOnWebPage("article", reviewer2 + " wrote a review for " + restaurant2.name + ": " + reviewsSortedByDate[1].review, "latest-reviews-content");
                 giveMeABreak("latest-reviews-content");
-                writeOnWebPage("div", reviewer3 + " wrote a review for " + restaurant3.name + ": " + reviewsSortedByDate[2].review, "latest-reviews-content");
+                writeOnWebPage("article", reviewer3 + " wrote a review for " + restaurant3.name + ": " + reviewsSortedByDate[2].review, "latest-reviews-content");
             })
         }
     }
