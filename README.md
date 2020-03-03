@@ -162,6 +162,12 @@ Project wrap-up
       1. Adjusted button styles
       2. Adjusted styles for generated information
       3. Corrected img layout for mobile
+### 2020-03-03
+      1. De-bugged css to remove layout breakages
+      2. Completed optimized layouts for mobile and desktop media queries
+      3. Re-structured elements for increased usability
+      4. Re-styled search input
+      5. Made iframes responsive to media breaks
 ## Highs/Lows
       Most Proud: Getting live information from API on to the page
       Least Proud: Overall lack of contribution to JS files both timewise and knowledgewise
