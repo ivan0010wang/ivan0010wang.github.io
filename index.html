@@ -15,7 +15,7 @@
     <div class="page-container">
         <header>
 
-            <div class="nav-bar">
+            <nav class="nav-bar">
                 <div class="logo-container"><img src="/images/restaurant-reviews.svg" alt="Restaurant Reviews Logo" height="125" width="125"></div>
                 <div class="client-tools">
                     <div class="search">
@@ -25,7 +25,7 @@
                         <a href="">Sign-In</a> <br> <a href="">Register</a>
                     </div>
                 </div>
-            </div>
+            </nav>
         </header>
         <div class="home">
             <img class="home-img" src="./images/resized-and-compressed.jpg" alt="Juicy Chesseburger">
@@ -51,8 +51,20 @@
             <span class="total-reviews" id="totalReviews"><br>Reviews</span>
         </div>
         <div class="all-restaurants">
-            <div class="promo1"><iframe src="https://via.placeholder.com/300x150" width="300"></iframe></div>
+            <div class="promo1">
+                <iframe></iframe>
+            </div>
             <ul id="restaurant-list" class="restaurant-list"></ul>
+            <ul id="restaurantNames" class="restaurant-list">
+                <li class="restaurant"></li>
+            </ul>
+        </div>
+        <div id="restaurant-details" class="current-restaurant">
+            <div class="restaurant-attributes">
+                <h1>Click on a restaurant to see details</h1>
+            </div>
+            <div class="restaurant-grade"></div>
+        </div>
             <form action="" class="enter-review">
                 <label for="name">Name</label><br>
                 <input type="text" id="name" name="name"><br>
@@ -66,22 +78,14 @@
                 <textarea id="review" rows="10" cols="50"></textarea><br>
                 <input type="submit" value="Submit your review">
             </form>
-            <ul id="restaurantNames" class="restaurant-list">
-                <li class="restaurant"></li>
-            </ul>
-        </div>
-        <div id="restaurant-details" class="current-restaurant">
-            <div class="restaurant-attributes">
-                <h1>Click on a restaurant to see details</h1>
-            </div>
-            <div class="restaurant-grade"></div>
-        </div>
     </div>
     <div class="reviews">
         <div class="review1"></div>
         <div class="review2"></div>
         <div class="review3"></div>
-        <div class="promo2"><iframe src="https://via.placeholder.com/300x300" width="300" height="300"></iframe></div>
+        <div class="promo2">
+            <iframe></iframe>
+        </div>
         <div class="review-images">
             <div class="main-img">
                 <img id="id1" src="/images/lily-banse--YHSwy6uqvk-unsplash-resized.jpg" alt="">
