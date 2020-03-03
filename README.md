@@ -117,6 +117,9 @@ Project wrap-up
       
 ### 2020-03-01
      1. Finished Forms
+### 2020-03-01
+     1. Fixed footer as it broke
+     2. Continued work on forms
 
 
 ### Most Proudest
@@ -124,6 +127,7 @@ Project wrap-up
 
 ### Least Proudest
       Not getting Promises and code. It is really disheartening.  
+
       
 
 
