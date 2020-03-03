@@ -209,14 +209,14 @@ restaurantInfo.then(info => {
     return info.length;
 });
 
-// const totalRestaurants = getTotalRestaurants();
-// totalRestaurants.then(a => {
-//     var newTag = document.createElement("span");
-//     var textnode = document.createTextNode(a);
-//     newTag.appendChild(textnode);
-//     let target = document.getElementById("totalRestaurants");
-//     target.insertBefore(newTag, target.childNodes[0]);
-// });
+const totalRestaurants = getTotalRestaurants();
+totalRestaurants.then(a => {
+    var newTag = document.createElement("span");
+    var textnode = document.createTextNode(a);
+    newTag.appendChild(textnode);
+    let target = document.getElementById("totalRestaurants");
+    target.insertBefore(newTag, target.childNodes[0]);
+});
 
 //Total Reviews
 getTotalReviews = async() => {
@@ -228,14 +228,14 @@ getTotalReviews = async() => {
 };
 getTotalReviews();
 
-// const totalReviews = getTotalReviews();
-// totalReviews.then(a => {
-//     var newTag = document.createElement("span");
-//     var textnode = document.createTextNode(a);
-//     newTag.appendChild(textnode);
-//     let target = document.getElementById("totalReviews");
-//     target.insertBefore(newTag, target.childNodes[0]);
-// });
+const totalReviews = getTotalReviews();
+totalReviews.then(a => {
+    var newTag = document.createElement("span");
+    var textnode = document.createTextNode(a);
+    newTag.appendChild(textnode);
+    let target = document.getElementById("totalReviews");
+    target.insertBefore(newTag, target.childNodes[0]);
+});
 
 //Sort Reviews by Date
 getLatestReviews = async() => {

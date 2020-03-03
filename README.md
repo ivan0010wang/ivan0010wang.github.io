@@ -1,6 +1,62 @@
 # Project-3
-Restaurant Review Website
+Restaurant Reviews Website  
+This website acts as a conduit for reading and posting reviews, ratings, and atrributes of your favourite restaurants.
 
+## Week 2 Timeline
+### Monday: 
+##### AM:  
+Project Management  
+OOP Lesson  
+##### PM:  
+Project Work
+### Tuesday
+##### AM:  
+OOP Coding Workshop  
+##### PM:  
+Project Work
+### Wednesday
+##### AM:  
+1/2 way Milestones Completed
+* Fix current bugs (Ivan)
+* Get JS form to work (Kevin)
+* CSS layouts completed incl. MQ (Jordan)  
+OOP Coding Workshop  
+##### PM:  
+Project Work
+### Thursday
+##### AM:  
+Ethics & Legals cross-session  
+##### PM:  
+Project Work
+### Friday
+##### AM:  
+Project Tasks Completed
+* Page layouts for all Media Queries
+* Can post reviews
+* All current JS Functions completed  
+CSS Animation class  
+##### PM:  
+Project wrap-up
+* Complete README
+* Tidy root directory 
+* Merge all git branches
+
+## Reflective Keypoints
+* Higher detail timelines
+* Set more concise milestones
+* Decompose problems further
+* Split labour more evenly across disciplines
+* Start JS early to remain on same page
+* Understand the data structure
+* Manipulate the application data
+* Get the data into the structure
+* Take responsible, effective breaks
+* Getting frustrated happens, refer to above
+* .then statements!!!!
+* Stay motivated
+      
+          
+# Working Log
 
 ## Ivan: 
 ### 2020-02-24
@@ -26,6 +82,9 @@ Restaurant Review Website
 ### 2020-02-29
       1. wrote the function to properly display score when a restaurant is clicked;
       2. wrote the function to show 3 restaurants with highest score.
+### Most/Least Proud Moments
+      Most: Putting pieces of code together can make some of the functions work!
+      Least: Having errors in my console and could not figure out why...
 
 ## Kevin:
 ### 2020-02-24 
@@ -35,7 +94,7 @@ Restaurant Review Website
       4. Researched how to add comments and score, which we most likely do with patch.
       5. Researched how to add total number of reviews and restaurants. This will be dependent on the content of the API, when we receive it.
 
- ### 2020-02-25
+### 2020-02-25
       1. UPdated more images
       2. Studied Scrapi
       3. Did footer structure and style
@@ -45,10 +104,28 @@ Restaurant Review Website
       1. Finished grid on page 2
       2. Started on switching pictures with JS
 
- ### 2020-02-27
+### 2020-02-27
       1. Finished picture switching functionality
       2. Started working on Combining scores for
       overall average
+
+### 2020-02-28
+      1. FInished combining scores with Ivans help
+
+### 2020-02-29
+      1. Fixed the footer
+      
+### 2020-03-01
+     1. Finished Forms
+
+
+### Most Proudest
+     Getting Picture replace working with JavaScript
+
+### Least Proudest
+      Not getting Promises and code. It is really disheartening.  
+      
+
 
 ## Jordan:
 ### 2020-02-24 
@@ -67,11 +144,12 @@ Restaurant Review Website
       3. Fonts/Colors applied
       4. Re-classed html elements for clarity
 ### 2020-02-27
-      1.Created async functions to show total restaurants and reviews
-      2.Inserted promise results into DOM
+      1. Created async functions to show total restaurants and reviews
+      2. Inserted promise results into DOM
 ### 2020-02-28
-      1.Created function to pull reviews based on recent updates
-      2.Began Re-structuring layout for optimization
-      3.Adjusting site brand colors for accessibility
-
-
+      1. Created function to pull reviews based on recent updates
+      2. Began Re-structuring layout for optimization
+      3. Adjusting site brand colors for accessibility
+## Highs/Lows
+      Most Proud: Getting live information from API on to the page
+      Least Proud: Overall lack of contribution to JS files both timewise and knowledgewise

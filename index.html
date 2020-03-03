@@ -16,27 +16,24 @@
         <header>
 
             <div class="nav-bar">
-
-                <div class="logo-container"><img src="/images/restaurant-reviews-neg-logo.svg" alt="Restaurant Reviews Logo" height="100" width="100"></div>
+                <div class="logo-container"><img src="/images/restaurant-reviews.svg" alt="Restaurant Reviews Logo" height="125" width="125"></div>
                 <div class="client-tools">
-                <div class="search">
-                    <input type="text" placeholder="&#x1F50E;"><button>Search</button>
-                </div>
-                <div class="sign-in">
-                    <a href="">Sign-In</a> <br> <a href="">Register</a>
-                </div>
-
+                    <div class="search">
+                        <input type="text" placeholder="&#x1F50D;"><button>Search</button>
+                    </div>
+                    <div class="sign-in">
+                        <a href="">Sign-In</a> <br> <a href="">Register</a>
+                    </div>
                 </div>
             </div>
         </header>
         <div class="home">
             <img class="home-img" src="./images/resized-and-compressed.jpg" alt="Juicy Chesseburger">
             <div class="home-statement">
-                <h1>Restaurant Reviews</h1>=
+                <h1>Restaurant Reviews</h1>
                 <p>Welcome to Restaurant Reviews! The best site to find, review, and rate restaurants on the whole internet. </p>
                 <button class="best-rest">Best Restaurant</button>
                 <button class="add-review">Add A Review</button>
-
             </div>
         </div>
         <div class="home-cards">
@@ -46,20 +43,15 @@
             </div>
             <div class="latest-reviews">
                 <h2>Our Latest Reviews</h2>
-                <div id="latest-reviews-content" class="latest-reviews-content" ></div>
+                <div id="latest-reviews-content" class="latest-reviews-content"></div>
             </div>
-            <div class="weather">
-                <h2>Your Local Weather</h2>
-
-            </div>
-
         </div>
         <div class="totals">
             <span class="total-restaurants" id="totalRestaurants"><br>Restaurants</span>
             <span class="total-reviews" id="totalReviews"><br>Reviews</span>
         </div>
         <div class="all-restaurants">
-            <div class="promo1"><iframe src="https://via.placeholder.com/475x150" width="475"></iframe></div>
+            <div class="promo1"><iframe src="https://via.placeholder.com/300x150" width="300"></iframe></div>
             <ul id="restaurant-list" class="restaurant-list"></ul>
             <form action="" class="enter-review">
                 <label for="name">Name</label><br>
@@ -72,6 +64,7 @@
                 <input type="number" id="rating" name="rating" min="1" max="5"><br>
                 <label for="Review">Review</label><br>
                 <textarea id="review" rows="10" cols="50"></textarea><br>
+                <input type="submit" value="Submit your review">
             </form>
             <ul id="restaurantNames" class="restaurant-list">
                 <li class="restaurant"></li>
@@ -82,61 +75,62 @@
                 <h1>Click on a restaurant to see details</h1>
             </div>
             <div class="restaurant-grade"></div>
+        </div>
+    </div>
+    <div class="reviews">
+        <div class="review1"></div>
+        <div class="review2"></div>
+        <div class="review3"></div>
+        <div class="promo2"><iframe src="https://via.placeholder.com/300x300" width="300" height="300"></iframe></div>
+        <div class="review-images">
+            <div class="main-img">
+                <img id="id1" src="/images/lily-banse--YHSwy6uqvk-unsplash-resized.jpg" alt="">
+            </div>
+            <div class="thumb-img1">
+                <img id="id2" onclick="changeImage1()" src="/images/joseph-gonzalez-egg-unsplash-resized.jpg" alt="">
+            </div>
+            <div class="thumb-img2">
+                <img id="id3" onclick="changeImage2()" src="/images/jay-wennington-N_Y88TWmGwA-unsplash-resized.jpg" alt="">
+            </div>
+            <div class="thumb-img3">
+                <img id="id4" onclick="changeImage3()" src="images/brooke-lark-oaz0raysASk-unsplash-resized.jpg" alt="">
             </div>
         </div>
-        <div class="reviews">
-            <div class="review1"></div>
-            <div class="review2"></div>
-            <div class="review3"></div>
-            <div class="promo2"><iframe src="https://via.placeholder.com/300x300" width="300" height="300"></iframe></div>
-            <div class="review-images">
-                <div class="main-img">
-                    <img id="id1" src="/images/lily-banse--YHSwy6uqvk-unsplash-resized.jpg" alt="">
-                </div>
-                <div class="thumb-img1">
-                    <img id="id2" onclick="changeImage1()" src="/images/joseph-gonzalez-egg-unsplash-resized.jpg" alt="">
-                </div>
-                <div class="thumb-img2">
-                    <img id="id3" onclick="changeImage2()" src="/images/jay-wennington-N_Y88TWmGwA-unsplash-resized.jpg" alt="">
-                </div>
-                <div class="thumb-img3">
-                    <img id="id4" onclick="changeImage3()" src="images/brooke-lark-oaz0raysASk-unsplash-resized.jpg" alt="">
-                </div>
-            </div>
+    </div>
+    <footer class="site-info">
+        <div class="logo-footer">
+            <img src="/images/restaurant-reviews-neg-logo.svg" alt="Restaurant Reviews Logo" height="100" width="100">
+            <h1>Restaurant Review</h1>
         </div>
-        <footer class="site-info">
-            <div class="logo-footer">
-                <img src="/images/restaurant-reviews-neg-logo.svg" alt="Restaurant Reviews Logo" height="100" width="100">
-                <span> <h1>Restaurant Review</h1> </span>
-            </div>
 
-            <div class="about-project">
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
+        <div class="about-project">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
 
-            <div class="site-features">
-                <p>Site Features : </p>
-                <p>View restaurant features</p>
-                <p>Post reviews, and view top restaurants</p>
+        <div class="site-features">
+            <p>Site Features : </p>
+            <p>View restaurant features</p>
+            <p>Post reviews, and view top restaurants</p>
 
-                <div class="project-about"></div>
-            </div>
-            <span class="copyright">
+            <div class="project-about"></div>
+        </div>
+        <span class="copyright">
                 &#169; Copyright WD 2020 Q1
             All rights reserved </span>
 
-            <div class="dev-names">
-                <a href="https://github.com/gadgetcrawford">Kevin  </a>
-                <a href="https://github.com/IvanTheWonderful">Ivan  </a>
-                <a href="https://github.com/JordanHofer92">Jordan</a>
-            </div>
-    </div>
+        <div class="dev-names">
+            <a href="https://github.com/gadgetcrawford">Kevin      </a>
+            <a href="https://github.com/IvanTheWonderful">Ivan      </a>
+            <a href="https://github.com/JordanHofer92">Jordan     </a>
+        </div>
+        </div>
     </footer>
     </div>
     <script src="./scripts/pleaseWork.js"></script>
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>
