@@ -160,8 +160,6 @@ p {
 
 .home-cards span,
 .latest-reviews-content div {
-    background: #F2E2BF;
-    border: 1px solid #000000;
     padding: 1em;
     line-height: 1em;
     margin: 0;
@@ -182,6 +180,12 @@ p {
     font-size: 1.5em;
 }
 
+.promo1 iframe {
+    width: 300px;
+    height: 150px;
+    background-image: url(https://via.placeholder.com/300x150);
+}
+
 .all-restaurants {
     grid-area: all-restaurants;
 }
@@ -200,6 +204,12 @@ p {
     margin-top: 5px;
     display: flex;
     justify-content: center;
+}
+
+.promo1 iframe {
+    width: 300px;
+    height: 150px;
+    background-image: url(https://via.placeholder.com/300x150);
 }
 
 .restaurant-list {
@@ -295,6 +305,12 @@ textarea {
     margin-bottom: .5em;
 }
 
+.promo2 iframe {
+    width: 300px;
+    height: 150px;
+    background-image: url(https://via.placeholder.com/300x150);
+}
+
 footer {
     background: #000000;
     color: #F7F7F7;
@@ -315,6 +331,10 @@ footer {
 
 footer a {
     color: #BA9374;
+}
+
+footer a:hover {
+    color: #F7F7F7;
 }
 
 .dev-names {
@@ -389,15 +409,25 @@ footer a {
 
 
 }
-@media only screen and (min-width: 930px) {
+
+@media only screen and (min-width: 900px) {
+    
     button {
         font-size: 1em;
     }
-    
+
     .page-container {
         display: grid;
-        grid-template-areas: "nav-bar" "home" "home-cards" "totals" "all-restaurants" "current-restaurant" "reviews" "site-info";
-        grid-template-rows: .05fr .80fr .5fr .15fr .5fr .5fr 1fr .05fr;
+        grid-template-areas: 
+        "nav-bar" 
+        "home" 
+        "home-cards" 
+        "totals" 
+        "all-restaurants" 
+        "current-restaurant" 
+        "reviews" 
+        "site-info";
+        grid-template-rows: .05fr 1fr 2fr .15fr .5fr .5fr .5fr .05fr;
         grid-template-columns: 1fr;
     }
     
@@ -433,16 +463,17 @@ footer a {
         text-align: center;
         width: 100%;
         height: 1em;
+        background-color: black;
     }
     
     .home img {
         width: 100vw;
-        height: 700px;
+        height: 800px;
         object-fit: cover;
     }
     
     .home h1 {
-        font-size: 6em;
+        font-size: 5em;
     }
     
     .home p {
@@ -460,11 +491,14 @@ footer a {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        max-height: 85%;
+        max-height: 90%;
+        margin-top: 3em;
+        margin-bottom: 3em;
     }
     
     .home-cards h2 {
         color: #F7F7F7;
+        margin-bottom: 2em;
     }
     
     .home-cards p {
@@ -474,24 +508,21 @@ footer a {
     }
     
     .top-restaurants {
-        border: 5px solid #A80000;
+        border: 5px solid rgb(92, 22, 18);
         width: 18em;
         position: relative;
-        margin-top: -15%;
+        margin-top: 5%;
+        font-size: 1.5em;
+        line-height: 4em;
     }
     
     .latest-reviews {
-        border: 5px solid #A80000;
-        width: 20em;
-        position: relative;
-        margin-top: -15%;
-    }
-    
-    .weather {
-        border: 5px solid #A80000;
+        border: 5px solid rgb(92, 22, 18);
         width: 18em;
         position: relative;
-        margin-top: -15%;
+        margin-top: 5%;
+        font-size: 1.5em;
+        line-height: 4em;
     }
     
     .totals {
@@ -499,15 +530,21 @@ footer a {
         display: flex;
         justify-content: space-around;
     }
-    
+
+    .promo1 iframe {
+        width: 800px;
+        height: 250px;
+        background-image: url(https://via.placeholder.com/800x250);
+    }
+
     .all-restaurants {
         grid-area: all-restaurants;
     }
-    
+
     .current-restaurant {
         grid-area: current-restaurant;
     }
-    
+
     .attribute-icons {
         display: flex;
         flex-direction: column;
@@ -516,7 +553,7 @@ footer a {
         max-width: 40%;
         margin-left: 30%;
     }
-    
+
     .reviews {
         grid-area: reviews;
         display: grid;
@@ -547,7 +584,7 @@ footer a {
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
         grid-area: review-images;
-        margin: 0 4% 12% 5%;
+        /* margin: 0 4% 12% 5%; */
     }
     
     .review2 {
@@ -564,11 +601,14 @@ footer a {
     
     .promo2 {
         grid-area: advert;
-        width: 30%;
-        height: 90%;
-        margin: 0 10% 5% 20%;
     }
-    
+
+    .promo2 iframe {
+        width: 400px;
+        height: 300px;
+        background-image: url(https://via.placeholder.com/400x300);
+    }
+
     .main-img {
         grid-area: main-img;
         min-width: 0;
@@ -599,18 +639,17 @@ footer a {
     
     footer {
         height: 600px;
-        margin: 0 5em;
         font-size: 1.2em;
     }
-    
-    footer a:hover {
-        color: #F7F7F7;
-    }
-    
+
     .site-info {
         grid-area: site-info;
         display: grid;
-        grid-template-areas: "logo title . about" "feature . . about" "feature . . ." "copyright names names names";
+        grid-template-areas: 
+        "logo title . about" 
+        "feature . . about" 
+        "feature . . ." 
+        "copyright names names names";
         grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
