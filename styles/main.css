@@ -216,6 +216,15 @@ p {
     max-width: 100%;
 }
 
+.restaurant-button {
+    margin: 0.5em;
+}
+
+.restaurant-button-active{
+    background: rgb(255, 94, 0);
+    text-decoration: underline;
+}
+
 .current-restaurant {
     grid-area: current-restaurant;
     text-align: center;
