@@ -242,6 +242,7 @@ textarea {
 }
 
 .review-images {
+    display: grid;
     grid-template-areas: 
     "main-img" 
     "thumb-img1"
@@ -249,7 +250,7 @@ textarea {
     "thumb-img3";
     grid-template-rows: 1fr .5fr .5fr .5fr;
     grid-template-columns: 1fr;
-    grid-gap: .25em;
+    /* grid-gap: .25em; */
 }
 
 .main-img {

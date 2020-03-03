@@ -4,28 +4,39 @@ This website acts as a conduit for reading and posting reviews, ratings, and atr
 
 ## Week 2 Timeline
 ### Monday: 
-#### AM:  Project Management/OOP Lesson  
-#### PM:  Project Work
+##### AM:  
+Project Management  
+OOP Lesson  
+##### PM:  
+Project Work
 ### Tuesday
-#### AM:  OOP Coding Workshop  
-#### PM:  Project Work
+##### AM:  
+OOP Coding Workshop  
+##### PM:  
+Project Work
 ### Wednesday
-#### AM:  1/2 way Milestones Completed
+##### AM:  
+1/2 way Milestones Completed
 * Fix current bugs (Ivan)
 * Get JS form to work (Kevin)
 * CSS layouts completed incl. MQ (Jordan)  
 OOP Coding Workshop  
-#### PM:  Project Work
+##### PM:  
+Project Work
 ### Thursday
-#### AM:  Ethics & Legals cross-session  
-#### PM:  Project Work
+##### AM:  
+Ethics & Legals cross-session  
+##### PM:  
+Project Work
 ### Friday
-#### AM:  Project Tasks Completed
+##### AM:  
+Project Tasks Completed
 * Page layouts for all Media Queries
 * Can post reviews
 * All current JS Functions completed  
 CSS Animation class  
-#### PM:  Project wrap-up
+##### PM:  
+Project wrap-up
 * Complete README
 * Tidy root directory 
 * Merge all git branches
@@ -83,7 +94,7 @@ CSS Animation class
       4. Researched how to add comments and score, which we most likely do with patch.
       5. Researched how to add total number of reviews and restaurants. This will be dependent on the content of the API, when we receive it.
 
- ### 2020-02-25
+### 2020-02-25
       1. UPdated more images
       2. Studied Scrapi
       3. Did footer structure and style
@@ -93,18 +104,18 @@ CSS Animation class
       1. Finished grid on page 2
       2. Started on switching pictures with JS
 
- ### 2020-02-27
+### 2020-02-27
       1. Finished picture switching functionality
       2. Started working on Combining scores for
       overall average
 
- ### 2020-02-28
+### 2020-02-28
       1. FInished combining scores with Ivans help
 
- ### 2020-02-29
+### 2020-02-29
       1. Fixed the footer
       
- ### 2020-03-01
+### 2020-03-01
      1. Finished Forms
 
 
