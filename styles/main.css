@@ -672,7 +672,6 @@ footer a:hover {
         margin-left: 15%;
     }
 
-
     textarea {
         width: 500px;
     }
@@ -682,17 +681,7 @@ footer a:hover {
         margin: 2em;
         border: 1px solid black;
     }
-
-    .review-images {
-        display: grid;
-        grid-template-areas: 
-        "main-img main-img main-img" 
-        "thumb-img1 thumb-img2 thumb-img3";
-        grid-template-rows: 2fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-area: review-images;
-    }
-
+    
     .review2 {
         grid-area: review2;
         border: 1px solid yellow;
@@ -705,44 +694,56 @@ footer a:hover {
         border: 1px solid teal;
     }
 
+    .review-images {
+        display: grid;
+        grid-template-areas: 
+        "main-img main-img main-img" 
+        "thumb-img1 thumb-img2 thumb-img3";
+        grid-template-rows: 2fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: .5em;
+        grid-area: review-images;
+    }
+
+    
     .promo2 {
         grid-area: advert;
     }
-
+    
     .promo2 iframe {
         width: 400px;
         height: 300px;
         background-image: url(https://via.placeholder.com/400x300);
     }
-
+    
     .main-img {
         grid-area: main-img;
         min-width: 0;
         min-height: 0;
         overflow: hidden;
     }
-
+    
     .thumb-img1 {
         grid-area: thumb-img1;
         min-width: 0;
         min-height: 0;
         overflow: hidden;
     }
-
+    
     .thumb-img2 {
         grid-area: thumb-img2;
         min-width: 0;
         min-height: 0;
         overflow: hidden;
     }
-
+    
     .thumb-img3 {
         grid-area: thumb-img3;
         min-width: 0;
         min-height: 0;
         overflow: hidden;
     }
-
+    
     footer {
         height: 600px;
         font-size: 1em;
@@ -802,5 +803,11 @@ footer a:hover {
 
     .dev-names a {
         font-size: 1em;
+    }
+}
+@media only screen and (min-width:1380px) {
+    .home-cards {
+        position: relative;
+        margin-top: -10%;
     }
 }
