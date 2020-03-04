@@ -41,7 +41,7 @@ getRestaurantsReviews().then(reviews => {
  * Show total number of restaurants in Strapi
  */
 function showTotalRestaurants(info) {
-    writeOnWebPage("span", " "+info.length, "totalRestaurants")
+    writeOnWebPage("span", " " + info.length, "totalRestaurants")
 }
 // End
 
@@ -50,7 +50,7 @@ function showTotalRestaurants(info) {
  * Show total number of reviews in Strapi
  */
 function showTotalReviews(reviews) {
-    writeOnWebPage("span", " "+reviews.length, "totalReviews")
+    writeOnWebPage("span", " " + reviews.length, "totalReviews")
 }
 // End
 
@@ -58,19 +58,36 @@ function showTotalReviews(reviews) {
 /**
  * Post user comments
  */
-function submitReview() {
-    fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
-        method: "POST",
-        body: JSON.stringify({
-            name: document.getElementById("name").value,
-            review: document.getElementById("review").value,
-            rating: document.getElementById("rating").value,
-            idrestaurant: "G0D0WN"/* This is the hard part, how to get the idnumber
-                                    based on the restaurant customer is commenting under. */,
-        })
-    })   
-}
+// function submitReview() {
+
+//     let name = document.getElementById("name").value;
+//     let review = document.getElementById("review").value;
+//     let rating= document.getElementById("rating").value;
+//     let idrestaurant= "W8T6U6";
+
+//     // var activeButton = document.getElementsByClassName("restaurant-button-active");
+//     // var restaurantID = activeButton.id;
+//     fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
+//         method: "POST",
+//         body:JSON.stringify({
+//             name:name,
+//             review:review,
+//             rating:rating,
+//             idrestaurant:idrestaurant
+//         })
+//     }).then(
+//         (response) => response.json())  
+// }
 //End
+    // fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
+    //     method: "POST",
+    //     body: JSON.stringify({
+    //         name: 'Mr. Wang',
+    //         review: 'Hello! I am Ivan.',
+    //         rating: 5,
+    //         idrestaurant: 'G0D0WN'
+    //     })
+    // })  
 
 
 /**
