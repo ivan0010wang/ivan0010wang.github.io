@@ -121,9 +121,13 @@ Project wrap-up
       
 ### 2020-03-01
      1. Finished Forms
-### 2020-03-01
+### 2020-03-02
      1. Fixed footer as it broke
      2. Continued work on forms
+
+### 2020-03-03
+     1. Fine tuned layout
+     2. Added tablet media query
 
 
 ### Most Proudest
