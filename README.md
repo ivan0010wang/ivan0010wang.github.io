@@ -91,13 +91,21 @@ Project wrap-up
       2. researched how to post user comments with javascript fetch-post.
 ### 2020-03-04
       1. continued researching and testing, can make new entry in server, but the entry is empty.
-### To-do List
+### Things that can make this website better
       1. post user comment
       2. weather api
       3. show restaurant with patio
-### Most/Least Proud Moments
-      Most: Putting pieces of code together can make some of the functions work!
-      Least: Having errors in my console and could not figure out why...
+	  4. make **ALL** restaurant names clickable, show info of that restaurant when clicked.
+### Post-Project Retrospective
+#### Overall Experience
+	Exciting, challenging, and frastrating (sometimes).
+#### Most/Least Proud about Yourself
+	Most: Putting pieces of code together can make some of the functions work!
+	Least: Having errors in my console and could not figure out why...
+#### One Key Learning
+	**RESEARCH MORE** before coding
+#### One Thing To Challenge in Next Project
+	New things that I never used before.
 
 ## Kevin:
 ### 2020-02-24 
