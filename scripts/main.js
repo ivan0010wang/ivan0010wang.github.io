@@ -145,6 +145,8 @@ function cleanUpReviews() {
  *     1. the restaurant info should show up in the restaurant detail section;
  *     2. the lastest 3 reviews should show up in the restaurant review section;
  */
+
+ restTemp =[]
 function showRestaurantInfoAnd3Reviews(restaurantInfo) {
     for (let i = 0; i < restaurantInfo.length; i++) {
         const targetButton = document.getElementById("restaurantButton" + i);
@@ -166,6 +168,8 @@ function showRestaurantInfoAnd3Reviews(restaurantInfo) {
                 writeOnWebPage("p", description, "restaurant-details");
             })
         });
+
+
         // show 3 reviews of THIS restaurant in review section
         restaurantReviews.then(reviews =>{
             const reviewsOfThisRestaurant = [];
@@ -395,14 +399,17 @@ function changeImage3() {
     //     }
     // })
 // fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
-//     "method": "POST",
-//     "headers": {"content-type": "multipart/form-data"},
-//     "body": {
-//         "name": "Ivan",
-//         "rating": 5,
-//         "idrestaurant": "G0D0WN",
-//         "review": "Please Show Up!"
-//     }
+//     method: "POST",
+//     headers: {
+//         Accept: "application/json",
+//         "content-type": "application/json"
+//     },
+//     body: JSON.stringify({
+//         name: "Ivan",
+//         rating: 5,
+//         idrestaurant: "G0D0WN",
+//         review: "Please Show Up!"
+//     })
 // })
 // .then(response => {
 //   console.log(response);
